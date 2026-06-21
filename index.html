@@ -4,356 +4,154 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hashira Hindi Sub — Manga, Manhwa, Manhua Hindi Mein</title>
-<meta name="description" content="Hashira Hindi Sub — manga, manhwa, manhua bilkul free Hindi mein. Sabse pehle updates, premium quality.">
+<meta name="description" content="Hashira Hindi Sub — manga, manhwa, manhua bilkul free Hindi mein.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Hind:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <style>
 :root {
-  --bg:#090910;--bg2:#11111c;--bg3:#18182a;--bg4:#222235;
-  --accent:#e8213c;--accent-glow:rgba(232,33,60,.35);
-  --orange:#ff7a1a;--gold:#ffbe33;--blue:#3d8bff;--green:#22cc88;
-  --text:#e8e8f8;--muted:#6868a0;--border:rgba(255,255,255,.07);
-  --manhwa:#e8213c;--manga:#3d8bff;--manhua:#22cc88;
+  --bg:#090910;--bg2:#11111c;--bg3:#18182a;--accent:#e8213c;
+  --orange:#ff7a1a;--gold:#ffbe33;--blue:#3d8bff;--text:#e8e8f8;--muted:#6868a0;
   --fd:'Bebas Neue',sans-serif;--fu:'Rajdhani',sans-serif;--fb:'Hind',sans-serif;
-  --r:10px;--shadow:0 8px 40px rgba(0,0,0,.65);
 }
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--fb);min-height:100vh;overflow-x:hidden}
-a{color:inherit;text-decoration:none;cursor:pointer}
-img{display:block}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);min-height:100vh}
+a{color:inherit;text-decoration:none}
 button{border:none;cursor:pointer;font-family:inherit;background:none}
-::-webkit-scrollbar{width:5px;height:5px}
-::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
-[hidden]{display:none!important}
 
-/* TICKER */
-.ticker{background:var(--accent);height:30px;overflow:hidden;display:flex;align-items:center}
-.ticker-track{display:flex;gap:64px;white-space:nowrap;animation:tick 35s linear infinite}
-.ticker-item{font-family:var(--fu);font-size:12px;font-weight:700;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
-.ticker-dot{width:5px;height:5px;background:rgba(255,255,255,.5);border-radius:50%;flex-shrink:0}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* HEADER */
-header{position:sticky;top:0;z-index:100;height:60px;background:rgba(9,9,16,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;gap:16px;justify-content:space-between}
-.logo{font-family:var(--fd);font-size:24px;letter-spacing:3px;flex-shrink:0;line-height:1.1;display:flex;flex-direction:column}
-.logo-accent{color:var(--accent)}
-.logo-sub{font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:-2px}
-.hnav{display:flex;gap:2px;align-items:center;flex:1}
-.hnav a{font-family:var(--fu);font-size:14px;font-weight:600;padding:6px 12px;border-radius:6px;color:var(--muted);transition:all .2s;letter-spacing:.3px}
-.hnav a:hover,.hnav a.act{color:var(--text);background:var(--bg3)}
-.hnav a.act{color:var(--accent)}
-.srch{display:flex;align-items:center;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:0 12px;gap:8px;height:36px;min-width:190px;transition:border-color .2s}
-.srch:focus-within{border-color:rgba(232,33,60,.5)}
-.srch svg{color:var(--muted);flex-shrink:0;width:13px;height:13px}
-.srch input{background:none;border:none;outline:none;color:var(--text);font-family:var(--fu);font-size:14px;font-weight:500;width:100%}
-.srch input::placeholder{color:var(--muted)}
-.admin-btn{background:var(--accent);color:#fff;padding:6px 14px;border-radius:6px;font-family:var(--fu);font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;transition:all .2s;cursor:pointer}
+header{position:sticky;top:0;z-index:100;height:60px;background:rgba(9,9,16,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07);padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:var(--fd);font-size:22px;letter-spacing:3px}
+.logo-acc{color:var(--accent)}
+.hnav{display:flex;gap:8px}
+.hnav a{font-family:var(--fu);font-size:13px;font-weight:600;padding:6px 12px;border-radius:6px;color:var(--muted);transition:.2s}
+.hnav a:hover{color:var(--text);background:var(--bg3)}
+.admin-btn{background:var(--accent);color:#fff;padding:6px 14px;border-radius:6px;font-family:var(--fu);font-size:11px;font-weight:700;transition:.2s}
 .admin-btn:hover{background:var(--orange)}
 
-/* HERO */
-.hero{position:relative;padding:64px 20px 100px;overflow:hidden;background:linear-gradient(180deg,rgba(232,33,60,.04) 0%,transparent 100%)}
-.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 15% 55%,rgba(232,33,60,.13) 0%,transparent 55%),radial-gradient(ellipse at 85% 15%,rgba(61,139,255,.07) 0%,transparent 45%)}
-.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px}
-.hero-diag{position:absolute;bottom:-1px;left:0;right:0;height:70px;background:var(--bg);clip-path:polygon(0 100%,100% 0,100% 100%);pointer-events:none}
-.hero-in{max-width:1100px;margin:0 auto;position:relative}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,33,60,.12);border:1px solid rgba(232,33,60,.28);padding:5px 14px;border-radius:30px;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
-.badge-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
-.hero-h1{font-family:var(--fd);font-size:clamp(52px,9vw,108px);line-height:.9;letter-spacing:2px;margin-bottom:8px}
-.hero-h1 .ghost{-webkit-text-stroke:1px rgba(255,255,255,.18);color:transparent;display:block}
-.hero-h1 .grad{background:linear-gradient(130deg,var(--accent) 0%,var(--orange) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-family:var(--fu);font-size:17px;font-weight:500;color:var(--muted);margin-bottom:28px;line-height:1.5}
-.hero-sub strong{color:var(--text);font-weight:700}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
-.btn-p{background:linear-gradient(130deg,var(--accent),var(--orange));color:#fff;padding:11px 26px;border-radius:var(--r);font-family:var(--fu);font-size:15px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;transition:all .24s;text-decoration:none;display:inline-block}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,33,60,.45)}
-.btn-s{background:var(--bg3);color:var(--text);padding:11px 26px;border-radius:var(--r);font-family:var(--fu);font-size:15px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:all .24s}
-.btn-s:hover{border-color:rgba(255,255,255,.18);background:var(--bg4)}
-.hero-stats{display:flex;gap:36px;flex-wrap:wrap}
-.stat-n{font-family:var(--fd);font-size:38px;line-height:1;margin-bottom:2px;background:linear-gradient(135deg,var(--text),rgba(255,255,255,.6));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-n em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-l{font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.hero{padding:60px 20px 80px;text-align:center;background:linear-gradient(180deg,rgba(232,33,60,.08) 0%,transparent 100%)}
+.hero h1{font-family:var(--fd);font-size:clamp(48px,8vw,96px);line-height:.9;margin-bottom:16px;letter-spacing:2px}
+.hero .grad{background:linear-gradient(130deg,var(--accent),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-family:var(--fu);font-size:16px;color:var(--muted);margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto}
+.hero-btns{display:flex;gap:12px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(130deg,var(--accent),var(--orange));color:#fff;padding:10px 24px;border-radius:8px;font-family:var(--fu);font-weight:700;transition:.2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,33,60,.3)}
 
-/* SECTIONS */
-.sec{max-width:1200px;margin:0 auto;padding:0 20px}
-.sec-hd{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px}
-.sec-title{font-family:var(--fd);font-size:26px;letter-spacing:2px;display:flex;align-items:center;gap:12px}
-.sec-title::before{content:'';width:4px;height:22px;background:linear-gradient(var(--accent),var(--orange));border-radius:2px;display:block;flex-shrink:0}
-.sec-link{font-family:var(--fu);font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;transition:color .2s}
-.sec-link:hover{color:var(--orange)}
+.sec{max-width:1200px;margin:0 auto;padding:48px 20px}
+.sec-title{font-family:var(--fd);font-size:24px;letter-spacing:2px;margin-bottom:24px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-bottom:32px}
+.scard{background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:8px;overflow:hidden;cursor:pointer;transition:.2s;text-decoration:none}
+.scard:hover{transform:translateY(-4px);border-color:rgba(232,33,60,.3)}
+.scard img{width:100%;height:220px;object-fit:cover}
+.scard-info{padding:10px}
+.scard-type{font-family:var(--fu);font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;margin-bottom:4px}
+.scard-name{font-family:var(--fu);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.2}
+.scard-meta{display:flex;justify-content:space-between;font-family:var(--fu);font-size:11px;color:var(--muted)}
 
-/* GENRE TABS */
-.genre-wrap{padding:20px 0 0}
-.genre-tabs{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.gtab{font-family:var(--fu);font-size:13px;font-weight:700;padding:7px 18px;border-radius:30px;background:var(--bg3);color:var(--muted);border:1px solid var(--border);cursor:pointer;transition:all .2s}
-.gtab:hover{color:var(--text);border-color:rgba(255,255,255,.15)}
-.gtab.act{color:#fff;border-color:transparent}
-.gtab.act[data-f="all"]{background:var(--accent)}
-.gtab.act[data-f="manhwa"]{background:var(--manhwa)}
-.gtab.act[data-f="manga"]{background:var(--manga)}
-.gtab.act[data-f="manhua"]{background:var(--manhua)}
+.ch-list{padding:20px}
+.ch-item{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;transition:.2s;text-decoration:none;color:inherit}
+.ch-item:hover{border-color:rgba(232,33,60,.2);background:var(--bg3)}
+.ch-num{font-family:var(--fd);font-size:20px;color:var(--muted);min-width:50px}
+.ch-info{flex:1}
+.ch-name{font-family:var(--fu);font-size:14px;font-weight:700}
+.ch-pages{font-family:var(--fu);font-size:11px;color:var(--muted);margin-top:2px}
 
-/* TRENDING SCROLL */
-.trend-scroll{display:flex;gap:14px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin-bottom:44px}
-.trend-card{flex-shrink:0;width:190px;scroll-snap-align:start;border-radius:var(--r);overflow:hidden;position:relative;cursor:pointer;transition:transform .2s}
-.trend-card:hover{transform:scale(1.04)}
-.trend-card img{width:100%;height:270px;object-fit:cover}
-.trend-rank{position:absolute;top:4px;left:8px;font-family:var(--fd);font-size:54px;color:rgba(255,255,255,.07);line-height:1;pointer-events:none}
-.trend-ov{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.9) 60%);padding:28px 11px 11px}
-.trend-type{font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px}
-.trend-name{font-family:var(--fu);font-size:13px;font-weight:700;line-height:1.3}
-.trend-rat{font-family:var(--fu);font-size:12px;font-weight:600;color:var(--gold);margin-top:3px}
-
-/* SERIES GRID */
-.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:15px;margin-bottom:46px}
-.scard{position:relative;background:var(--bg2);border-radius:var(--r);overflow:hidden;border:1px solid var(--border);cursor:pointer;transition:all .22s;display:block}
-.scard:hover{transform:translateY(-5px);border-color:rgba(232,33,60,.3);box-shadow:0 14px 44px rgba(0,0,0,.65),0 0 24px rgba(232,33,60,.12)}
-.scard-img-wrap{overflow:hidden}
-.scard img{width:100%;height:225px;object-fit:cover;transition:transform .3s}
-.scard:hover img{transform:scale(1.05)}
-.scard-body{padding:9px 10px 11px}
-.stype{display:inline-block;font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-bottom:5px}
-.stype.manhwa{background:rgba(232,33,60,.18);color:var(--manhwa)}
-.stype.manga{background:rgba(61,139,255,.18);color:var(--manga)}
-.stype.manhua{background:rgba(34,204,136,.18);color:var(--manhua)}
-.scard-title{font-family:var(--fu);font-size:13px;font-weight:700;line-height:1.35;color:var(--text);margin-bottom:6px}
-.scard-meta{display:flex;justify-content:space-between;align-items:center}
-.rat{font-family:var(--fu);font-size:12px;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:2px}
-.rat svg{width:10px;height:10px;fill:currentColor;flex-shrink:0}
-.chs{font-family:var(--fu);font-size:11px;color:var(--muted);font-weight:600}
-.new-b{position:absolute;top:8px;right:8px;background:var(--accent);color:#fff;font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:1px;padding:2px 7px;border-radius:4px;text-transform:uppercase}
-
-/* TAGS */
-.tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:48px}
-.tag{font-family:var(--fu);font-size:13px;font-weight:600;padding:6px 15px;border-radius:30px;background:var(--bg3);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s}
-.tag:hover{color:var(--text);border-color:rgba(255,255,255,.18);background:var(--bg4)}
-
-/* RECENT */
-.reclist{display:flex;flex-direction:column;gap:9px;margin-bottom:48px}
-.recitem{display:flex;align-items:center;gap:13px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;cursor:pointer;transition:all .2s}
-.recitem:hover{border-color:rgba(232,33,60,.22);background:var(--bg3)}
-.rec-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.rec-cover{width:44px;height:62px;object-fit:cover;border-radius:7px;flex-shrink:0}
-.rec-info{flex:1;min-width:0}
-.rec-title{font-family:var(--fu);font-size:15px;font-weight:700;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rec-ch{font-family:var(--fu);font-size:12px;color:var(--muted);font-weight:500}
-.rec-ch b{color:var(--accent);font-weight:700}
-.rec-date{font-family:var(--fu);font-size:12px;color:var(--muted);font-weight:600;flex-shrink:0}
-
-/* FOOTER */
-footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20px 22px;margin-top:56px}
-.foot-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px}
-.foot-brand .logo{font-size:21px;margin-bottom:10px}
-.foot-brand p{font-family:var(--fb);font-size:13px;color:var(--muted);line-height:1.65;max-width:240px}
-.foot-col h4{font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
-.foot-col a{display:block;font-family:var(--fu);font-size:14px;font-weight:500;color:var(--muted);margin-bottom:9px;transition:color .2s}
-.foot-col a:hover{color:var(--text)}
-.foot-bottom{max-width:1100px;margin:0 auto;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.foot-bottom p{font-family:var(--fu);font-size:12px;color:var(--muted);font-weight:500}
-.foot-bottom .acc{color:var(--accent)}
-
-/* SERIES PAGE */
-.spage{max-width:900px;margin:0 auto;padding:28px 20px}
-.crumb{font-family:var(--fu);font-size:13px;font-weight:600;color:var(--muted);margin-bottom:22px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.crumb a{color:var(--accent)}
-.crumb span{color:var(--muted)}
-.s-hero{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:30px}
-.s-cover img{width:100%;border-radius:var(--r);aspect-ratio:3/4;object-fit:cover;box-shadow:var(--shadow)}
-.s-badge{display:inline-block;font-family:var(--fu);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:6px;margin-bottom:10px}
-.s-info h1{font-family:var(--fd);font-size:34px;letter-spacing:1px;line-height:1.05;margin-bottom:8px}
-.s-rat{font-family:var(--fd);font-size:20px;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:6px}
-.s-rat small{font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:500;font-variant:normal}
-.s-desc{font-family:var(--fb);font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px}
-.s-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
-.stag{font-family:var(--fu);font-size:12px;font-weight:600;padding:4px 12px;border-radius:30px;background:var(--bg3);border:1px solid var(--border);color:var(--muted)}
-.s-meta{font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:600}
-.s-meta b{color:var(--text)}
-.ch-list-hd{font-family:var(--fd);font-size:22px;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.ch-item{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;margin-bottom:8px;cursor:pointer;transition:all .2s}
-.ch-item:hover{border-color:rgba(232,33,60,.28);background:var(--bg3)}
-.ch-num{font-family:var(--fd);font-size:22px;color:var(--muted);min-width:52px}
-.ch-name{font-family:var(--fu);font-size:15px;font-weight:700;margin-bottom:1px}
-.ch-pgs{font-family:var(--fu);font-size:11px;color:var(--muted);font-weight:500}
-.ch-arr{margin-left:auto;color:var(--muted)}
-.nodata{font-family:var(--fu);font-size:14px;color:var(--muted);padding:20px 0}
-
-/* PDF VIEWER */
 .pdf-viewer{max-width:800px;margin:0 auto;padding:20px}
-.pdf-controls{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:15px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.pdf-page{width:100%;border-radius:5px;margin-bottom:10px}
-.pdf-nav{display:flex;gap:8px;align-items:center}
-.pdf-nav button{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:7px 12px;border-radius:var(--r);font-family:var(--fu);font-size:12px;font-weight:700;transition:all .2s;cursor:pointer}
-.pdf-nav button:hover{background:var(--accent);border-color:transparent;color:#fff}
-.pdf-nav button:disabled{opacity:.5;cursor:not-allowed}
+.pdf-controls{background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:12px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pdf-btns{display:flex;gap:8px}
+.pdf-btn{background:var(--bg3);border:1px solid rgba(255,255,255,.1);color:var(--text);padding:6px 12px;border-radius:6px;font-family:var(--fu);font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
+.pdf-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.pdf-btn:disabled{opacity:.4;cursor:not-allowed}
 .pdf-info{font-family:var(--fu);font-size:12px;color:var(--muted)}
+.pdf-frame{width:100%;height:600px;border:1px solid rgba(255,255,255,.07);border-radius:6px}
 
-/* SHORTENER GATE */
-.shortner-required{background:rgba(255,122,26,.15);border:1px solid rgba(255,122,26,.3);padding:16px;border-radius:var(--r);margin:20px 0;color:var(--orange);font-family:var(--fu);text-align:center}
-
-/* ADMIN PANEL */
-.admin-modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}
-.admin-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);width:100%;max-width:700px;max-height:90vh;overflow-y:auto;padding:30px}
-.admin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-.admin-title{font-family:var(--fd);font-size:28px;letter-spacing:2px}
-.admin-close{font-size:24px;cursor:pointer;color:var(--muted);transition:color .2s}
+.admin-modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}
+.admin-box{background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:8px;width:100%;max-width:600px;max-height:80vh;overflow-y:auto;padding:24px}
+.admin-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:16px}
+.admin-title{font-family:var(--fd);font-size:24px}
+.admin-close{font-size:24px;cursor:pointer;color:var(--muted);transition:.2s}
 .admin-close:hover{color:var(--text)}
-.form-group{margin-bottom:20px}
-.form-label{display:block;font-family:var(--fu);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.form-input,.form-select,.form-textarea{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:6px;font-family:var(--fb);font-size:14px;transition:border-color .2s}
-.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--accent)}
-.form-textarea{resize:vertical;min-height:100px;font-family:var(--fu)}
-.form-btn{background:var(--accent);color:#fff;padding:11px 22px;border-radius:6px;font-family:var(--fu);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;width:100%;border:none}
-.form-btn:hover{background:var(--orange);transform:translateY(-2px)}
-.form-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
-.series-list{margin-top:24px;border-top:1px solid var(--border);padding-top:24px}
-.series-item{background:var(--bg3);padding:14px;border-radius:6px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.series-item-info h4{font-family:var(--fu);font-size:14px;margin-bottom:4px}
-.series-item-info p{font-family:var(--fu);font-size:12px;color:var(--muted)}
-.btn-edit,.btn-delete{padding:6px 12px;border-radius:4px;font-family:var(--fu);font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;border:none;background:none}
-.btn-edit{background:var(--blue);color:#fff}
-.btn-edit:hover{background:rgba(61,139,255,.7)}
-.btn-delete{background:rgba(232,33,60,.2);color:var(--accent)}
-.btn-delete:hover{background:rgba(232,33,60,.4)}
-.msg{padding:12px 16px;border-radius:6px;margin-bottom:16px;font-family:var(--fu);font-size:13px;font-weight:600}
-.msg.success{background:rgba(34,204,136,.15);color:var(--green);border:1px solid rgba(34,204,136,.3)}
-.msg.error{background:rgba(232,33,60,.15);color:var(--accent);border:1px solid rgba(232,33,60,.3)}
-.upload-area{background:var(--bg3);border:2px dashed var(--border);padding:20px;border-radius:6px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:10px}
-.upload-area:hover{border-color:var(--accent);background:rgba(232,33,60,.05)}
-.upload-area.drag{border-color:var(--accent);background:rgba(232,33,60,.1)}
-.upload-area p{font-family:var(--fu);font-size:13px;color:var(--muted);margin:0}
-.upload-area input[type="file"]{display:none}
-.pdf-list{background:var(--bg3);padding:12px;border-radius:6px;margin-bottom:10px}
-.pdf-item{display:flex;justify-content:space-between;align-items:center;padding:8px;background:var(--bg2);border-radius:4px;margin-bottom:6px;font-family:var(--fu);font-size:12px}
-.pdf-item:last-child{margin-bottom:0}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-family:var(--fu);font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.form-input,.form-select{width:100%;background:var(--bg3);border:1px solid rgba(255,255,255,.07);color:var(--text);padding:8px 10px;border-radius:6px;font-family:var(--fb);font-size:13px}
+.form-input:focus,.form-select:focus{outline:none;border-color:var(--accent)}
+.form-btn{background:var(--accent);color:#fff;width:100%;padding:10px;border-radius:6px;font-family:var(--fu);font-weight:700;font-size:12px;cursor:pointer;transition:.2s;text-transform:uppercase}
+.form-btn:hover{background:var(--orange)}
+.upload-area{background:var(--bg3);border:2px dashed rgba(255,255,255,.2);padding:16px;border-radius:6px;text-align:center;cursor:pointer;transition:.2s}
+.upload-area:hover{border-color:var(--accent)}
+.upload-area p{font-family:var(--fu);font-size:12px;color:var(--muted)}
+.upload-area input{display:none}
 
-/* FADE-IN */
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.fi{animation:fadeUp .38s ease both}
-.fi1{animation-delay:.04s}.fi2{animation-delay:.09s}.fi3{animation-delay:.14s}.fi4{animation-delay:.19s}.fi5{animation-delay:.24s}
+.series-list{background:var(--bg3);border-radius:6px;padding:12px;margin-top:16px}
+.series-item{background:var(--bg2);padding:10px;border-radius:6px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.series-item h4{font-family:var(--fu);font-size:13px}
+.btn-small{padding:4px 8px;border-radius:4px;font-family:var(--fu);font-size:10px;font-weight:700;cursor:pointer;background:rgba(232,33,60,.2);color:var(--accent);transition:.2s}
+.btn-small:hover{background:rgba(232,33,60,.4)}
 
-/* RESPONSIVE */
-@media(max-width:900px){.foot-in{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.hero{padding:36px 16px 80px}.hero-h1{font-size:clamp(44px,12vw,80px)}.hero-stats{gap:20px}.hnav{display:none}.s-hero{grid-template-columns:140px 1fr}.s-info h1{font-size:24px}.srch{display:none}.foot-in{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
-@media(max-width:500px){.s-hero{grid-template-columns:1fr}.s-cover img{max-width:180px;margin:0 auto}.admin-box{padding:20px}.series-item{flex-direction:column;align-items:flex-start}.pdf-controls{flex-direction:column}.pdf-nav{width:100%;justify-content:center}}
+footer{background:var(--bg2);border-top:1px solid rgba(255,255,255,.07);padding:32px 20px;text-align:center;margin-top:48px}
+footer p{font-family:var(--fu);font-size:12px;color:var(--muted)}
+footer .acc{color:var(--accent)}
+
+@media(max-width:700px){
+  .hnav{display:none}
+  .sgrid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+  .pdf-controls{flex-direction:column}
+  .pdf-frame{height:400px}
+}
 </style>
 </head>
 <body>
 
-<div class="ticker"><div class="ticker-track" id="ttk"></div></div>
-
 <header>
-  <a class="logo" href="#" id="hlogo">HASHIRA<span class="logo-accent"> SUB</span><span class="logo-sub">Hindi Manga Reader</span></a>
+  <div class="logo">HASHIRA<span class="logo-acc"> SUB</span></div>
   <nav class="hnav">
-    <a href="#" class="act">Home</a>
-    <a href="#">Manhwa</a>
-    <a href="#">Manga</a>
-    <a href="#">Manhua</a>
-    <a href="#">Trending</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
   </nav>
-  <div class="srch">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-    <input type="text" placeholder="Series dhundho...">
-  </div>
-  <button class="admin-btn" id="admin-toggle">🔐 Admin</button>
+  <button class="admin-btn" onclick="showAdmin()">🔐 Admin</button>
 </header>
 
 <div id="app"></div>
 
-<footer id="foot">
-  <div class="foot-in">
-    <div class="foot-brand">
-      <div class="logo">HASHIRA<span class="logo-accent"> SUB</span></div>
-      <p>Manga, manhwa, aur manhua — ab bilkul free, bilkul Hindi mein. Tumhari bhasha, tumhari kahaniyan.</p>
-    </div>
-    <div class="foot-col">
-      <h4>Navigate</h4>
-      <a href="#">Home</a><a href="#">Trending</a><a href="#">New Releases</a><a href="#">Completed</a>
-    </div>
-    <div class="foot-col">
-      <h4>Community</h4>
-      <a href="#">Discord Server</a><a href="#">Telegram Group</a><a href="#">Instagram</a><a href="#">Twitter / X</a>
-    </div>
-    <div class="foot-col">
-      <h4>Info</h4>
-      <a href="#">About Us</a><a href="#">Contact</a><a href="#">DMCA</a><a href="#">Privacy Policy</a>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <p>&copy; 2026 <span class="acc">Hashira Hindi Sub</span>. Sirf padhne ke liye — koi commercial use nahi.</p>
-    <p>Made with passion for Hindi readers</p>
-  </div>
+<footer>
+  <p>&copy; 2026 <span class="acc">Hashira Hindi Sub</span> | Free Manga Reader in Hindi</p>
 </footer>
 
-<!-- ADMIN MODAL -->
-<div id="admin-modal" style="display:none">
+<div id="admin-modal" class="admin-modal" style="display:none">
   <div class="admin-box">
-    <div class="admin-header">
+    <div class="admin-head">
       <div class="admin-title">Admin Panel</div>
-      <span class="admin-close" id="admin-close">✕</span>
+      <span class="admin-close" onclick="closeAdmin()">✕</span>
     </div>
     <div id="admin-content"></div>
   </div>
 </div>
 
 <script>
-pdfjsWorker.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-// ======================================================================
-//  CONFIG
-// ======================================================================
 const ADMIN_EMAIL = "mdaashiq7814@gmail.com";
-const SHORTENER_API = "7f3db1cbf6409f49ac615f382d4c8260dc354812";
-const SHORTENER_URL = "https://arolinks.com/api/short";
-const CHAPTER_GATE = 10;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-// ======================================================================
-//  LOCAL STORAGE INIT
-// ======================================================================
-function initStorage(){
-  if(!localStorage.getItem('hashira_data')){
-    localStorage.setItem('hashira_data', JSON.stringify(defaultData()));
-  }
-}
-
-function defaultData(){
-  return {
-    announcements: [
-      "NAYA   Solo Leveling Ch.3 Upload Ho Gaya — Abhi Padho!",
-      "UPDATE   Omniscient Reader Ch.2 Hindi Mein Update!",
-      "COMING   Tower of God Season 2 Jald Aayega!",
-      "JOIN   Hamare Discord Server Par — Link Footer Mein!",
-      "NAYA   One Piece Ch.2 Upload — Zoro Arc Shuru!"
-    ],
-    series: [
-      {
-        id:"solo-leveling",title:"Solo Leveling",type:"manhwa",
-        cover:"https://picsum.photos/seed/slvlhindi/300/420",
-        desc:"Sung Jinwoo — duniya ka sabse kamzor hunter tha.",
-        rating:9.8,tags:["Action","Fantasy","System","OP MC"],updatedAt:"2026-06-20",
-        chapters:[
-          {num:1,title:"Sabse Kamzoor Hunter",pdf:null},
-          {num:2,title:"Double Dungeon Ka Raaz",pdf:null}
-        ]
-      }
-    ]
+// ======== STORAGE ========
+function getData() {
+  let data = localStorage.getItem('hashira_data');
+  return data ? JSON.parse(data) : {
+    series: [{
+      id: "demo",
+      title: "Demo Series",
+      type: "manhwa",
+      cover: "https://picsum.photos/300/420?random=1",
+      desc: "Demo manga series",
+      rating: 9.5,
+      chapters: []
+    }]
   };
 }
 
-function getData(){
-  return JSON.parse(localStorage.getItem('hashira_data'));
-}
-
-function saveData(data){
+function saveData(data) {
   localStorage.setItem('hashira_data', JSON.stringify(data));
 }
 
-// ======================================================================
-//  PDF TO BASE64 CONVERTER
-// ======================================================================
 function fileToBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -363,601 +161,355 @@ function fileToBase64(file) {
   });
 }
 
-// ======================================================================
-//  SHORTENER SERVICE
-// ======================================================================
-async function shortenUrl(longUrl){
-  try{
-    const response = await fetch(SHORTENER_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        url: longUrl,
-        api_token: SHORTENER_API
-      })
-    });
-    const data = await response.json();
-    if(data.success) return data.short_url;
-    return null;
-  } catch(e){
-    console.error('Shortener error:', e);
-    return null;
-  }
-}
-
-// ======================================================================
-//  UTILS
-// ======================================================================
-const $=id=>document.getElementById(id);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-
-function typeColor(t){
-  if(t==='manhwa')return'var(--manhwa)';
-  if(t==='manga')return'var(--manga)';
-  return'var(--manhua)';
-}
-
-function timeAgo(d){
-  const diff=Math.floor((new Date('2026-06-21')-new Date(d))/(864e5));
-  if(diff===0)return'Aaj';if(diff===1)return'Kal';
-  if(diff<7)return diff+' din pehle';
-  if(diff<30)return Math.floor(diff/7)+' hafte pehle';
-  return Math.floor(diff/30)+' mahine pehle';
-}
-
-function starSVG(){return`<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`}
-
-// ======================================================================
-//  TICKER
-// ======================================================================
-function initTicker(){
-  const data = getData();
-  const items=[...data.announcements,...data.announcements];
-  $('ttk').innerHTML=items.map(a=>`<span class="ticker-item"><span class="ticker-dot"></span>${esc(a)}</span>`).join('');
-}
-
-// ======================================================================
-//  ADMIN MODAL
-// ======================================================================
-function showAdminModal(){
-  const modal = $('admin-modal');
-  const email = prompt('Admin Email verify karo:');
-  if(email !== ADMIN_EMAIL){
-    alert('Galat Email! Sirf ' + ADMIN_EMAIL + ' use kar sakta hai.');
+// ======== ADMIN ========
+function showAdmin() {
+  const email = prompt('Admin Email:');
+  if (email !== ADMIN_EMAIL) {
+    alert('❌ Galat Email!');
     return;
   }
-  modal.style.display = 'flex';
-  renderAdminPanel();
+  $('admin-modal').style.display = 'flex';
+  renderAdmin();
 }
 
-function closeAdminModal(){
+function closeAdmin() {
   $('admin-modal').style.display = 'none';
 }
 
-function renderAdminPanel(){
+function renderAdmin() {
   const data = getData();
-  const series = data.series;
-  
   let html = `
-    <div class="form-group">
-      <h3 style="font-family:var(--fd);font-size:20px;margin-bottom:16px">📝 Naya Series Add Karo</h3>
-      <div class="form-label">Series Title</div>
-      <input type="text" id="adm-title" placeholder="e.g. Solo Leveling" class="form-input" style="margin-bottom:10px">
-      
-      <div class="form-label">Type</div>
-      <select id="adm-type" class="form-select" style="margin-bottom:10px">
-        <option value="manhwa">Manhwa</option>
-        <option value="manga">Manga</option>
-        <option value="manhua">Manhua</option>
-      </select>
-      
-      <div class="form-label">Cover Image (PNG/JPG)</div>
-      <div class="upload-area" id="cover-upload" style="margin-bottom:10px">
-        <p>📸 Image drag karo ya click karo</p>
-        <input type="file" id="cover-file" accept="image/*">
+    <div style="margin-bottom:20px">
+      <h3 style="font-family:var(--fd);font-size:18px;margin-bottom:16px">📝 Naya Series</h3>
+      <div class="form-group">
+        <label class="form-label">Title</label>
+        <input type="text" id="adm-title" class="form-input" placeholder="Series name">
       </div>
-      <input type="text" id="adm-cover-url" placeholder="Ya image URL paste karo" class="form-input" style="margin-bottom:10px">
-      
-      <div class="form-label">Description</div>
-      <textarea id="adm-desc" placeholder="Series ke baare mein likho..." class="form-textarea" style="margin-bottom:10px"></textarea>
-      
-      <div class="form-label">Rating (0-10)</div>
-      <input type="number" id="adm-rating" placeholder="9.5" min="0" max="10" step="0.1" class="form-input" style="margin-bottom:10px">
-      
-      <div class="form-label">Tags (comma se separate karo)</div>
-      <input type="text" id="adm-tags" placeholder="Action, Fantasy, System" class="form-input" style="margin-bottom:10px">
-      
-      <button class="form-btn" onclick="addNewSeries()">Add Series ✓</button>
-    </div>
-    
-    <div class="series-list">
-      <h3 style="font-family:var(--fd);font-size:18px;margin-bottom:16px">📚 Series Manage Karo (${series.length})</h3>
-      ${series.length ? series.map(s => `
-        <div class="series-item">
-          <div class="series-item-info">
-            <h4>${esc(s.title)}</h4>
-            <p>${s.chapters.length} chapters | ${s.type}</p>
-          </div>
-          <div style="display:flex;gap:8px">
-            <button class="btn-edit" onclick="editSeries('${esc(s.id)}')">Edit</button>
-            <button class="btn-delete" onclick="deleteSeries('${esc(s.id)}')">Delete</button>
-          </div>
+      <div class="form-group">
+        <label class="form-label">Type</label>
+        <select id="adm-type" class="form-select">
+          <option value="manhwa">Manhwa</option>
+          <option value="manga">Manga</option>
+          <option value="manhua">Manhua</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Cover Image</label>
+        <div class="upload-area" id="cover-upload" onclick="$('cover-file').click()">
+          <p>📸 Click or drag image</p>
+          <input type="file" id="cover-file" accept="image/*">
         </div>
-      `).join('') : '<p style="color:var(--muted);font-family:var(--fu)">Abhi koi series nahi hai</p>'}
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <input type="text" id="adm-desc" class="form-input" placeholder="Series description">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Rating (0-10)</label>
+        <input type="number" id="adm-rating" class="form-input" placeholder="9.5" min="0" max="10" step="0.1">
+      </div>
+      <button class="form-btn" onclick="addSeries()">Add Series</button>
+    </div>
+
+    <h3 style="font-family:var(--fd);font-size:18px;margin-bottom:12px">📚 Series (${data.series.length})</h3>
+    <div class="series-list">
+      ${data.series.map((s, i) => `
+        <div class="series-item">
+          <div>
+            <h4>${esc(s.title)}</h4>
+            <p style="font-size:11px;color:var(--muted)">${s.chapters.length} chapters</p>
+          </div>
+          <button class="btn-small" onclick="editSeries(${i})">Edit</button>
+        </div>
+      `).join('')}
     </div>
   `;
   
   $('admin-content').innerHTML = html;
   
-  // Cover upload
   const uploadArea = $('cover-upload');
   const fileInput = $('cover-file');
   
-  uploadArea.addEventListener('click', () => fileInput.click());
   uploadArea.addEventListener('dragover', e => {
     e.preventDefault();
-    uploadArea.classList.add('drag');
+    uploadArea.style.borderColor = 'var(--accent)';
   });
-  uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag'));
+  
+  uploadArea.addEventListener('dragleave', () => {
+    uploadArea.style.borderColor = '';
+  });
+  
   uploadArea.addEventListener('drop', async e => {
     e.preventDefault();
-    uploadArea.classList.remove('drag');
-    if(e.dataTransfer.files.length) {
-      const file = e.dataTransfer.files[0];
+    const file = e.dataTransfer.files[0];
+    if (file) {
       const base64 = await fileToBase64(file);
-      $('adm-cover-url').value = base64;
-      uploadArea.innerHTML = '<p>✅ Image upload ho gaya!</p>';
+      window.coverData = base64;
+      uploadArea.innerHTML = '<p>✅ Image ready</p>';
     }
   });
   
   fileInput.addEventListener('change', async e => {
-    if(e.target.files.length) {
-      const file = e.target.files[0];
-      const base64 = await fileToBase64(file);
-      $('adm-cover-url').value = base64;
-      uploadArea.innerHTML = '<p>✅ Image upload ho gaya!</p>';
+    if (e.target.files[0]) {
+      const base64 = await fileToBase64(e.target.files[0]);
+      window.coverData = base64;
+      uploadArea.innerHTML = '<p>✅ Image ready</p>';
     }
   });
 }
 
-function addNewSeries(){
+function addSeries() {
   const title = $('adm-title').value.trim();
   const type = $('adm-type').value;
-  const cover = $('adm-cover-url').value.trim();
   const desc = $('adm-desc').value.trim();
   const rating = parseFloat($('adm-rating').value) || 0;
-  const tags = $('adm-tags').value.split(',').map(t => t.trim()).filter(t => t);
   
-  if(!title || !cover || !desc){
-    alert('❌ Sab fields fill karo! Title, Cover, aur Description zaroor chahiye.');
+  if (!title || !window.coverData || !desc) {
+    alert('❌ Fill all fields!');
     return;
   }
   
-  const id = title.toLowerCase().replace(/\s+/g, '-');
   const data = getData();
+  const id = title.toLowerCase().replace(/\s+/g, '-');
   
-  if(data.series.find(s => s.id === id)){
-    alert('❌ Yeh series pehle se hai!');
+  if (data.series.find(s => s.id === id)) {
+    alert('❌ Series already exists!');
     return;
   }
   
   data.series.push({
-    id, title, type, cover, desc, rating, tags,
-    updatedAt: new Date().toISOString().split('T')[0],
+    id,
+    title,
+    type,
+    cover: window.coverData,
+    desc,
+    rating,
     chapters: []
   });
   
   saveData(data);
-  renderAdminPanel();
-  alert('✅ Series add ho gaya! Ab chapters add karo.');
+  renderAdmin();
+  window.coverData = null;
+  alert('✅ Series added!');
 }
 
-function editSeries(id){
+function editSeries(idx) {
   const data = getData();
-  const series = data.series.find(s => s.id === id);
-  if(!series) return;
+  const series = data.series[idx];
   
   let html = `
-    <h3 style="font-family:var(--fd);font-size:20px;margin-bottom:16px">📖 ${esc(series.title)} - Chapters</h3>
+    <button class="form-btn" onclick="renderAdmin()" style="background:var(--bg3);color:var(--text);margin-bottom:16px">← Back</button>
+    <h3 style="font-family:var(--fd);font-size:18px;margin-bottom:16px">${esc(series.title)} - Chapters</h3>
     
-    <div class="form-group">
-      <div class="form-label">🔴 Naya Chapter Add Karo (PDF)</div>
-      <input type="number" id="edit-ch-num" placeholder="Chapter Number (e.g., 1, 2, 3)" class="form-input" style="margin-bottom:10px">
-      <input type="text" id="edit-ch-title" placeholder="Chapter Title (optional)" class="form-input" style="margin-bottom:10px">
-      
-      <div class="form-label">PDF File Upload</div>
-      <div class="upload-area" id="pdf-upload" style="margin-bottom:10px">
-        <p>📄 PDF drag karo ya click karo</p>
-        <input type="file" id="pdf-file" accept=".pdf,application/pdf">
+    <div style="margin-bottom:20px">
+      <label class="form-label">Chapter Number</label>
+      <input type="number" id="ch-num" class="form-input" placeholder="1" min="1">
+    </div>
+    
+    <div style="margin-bottom:20px">
+      <label class="form-label">Chapter Title</label>
+      <input type="text" id="ch-title" class="form-input" placeholder="Optional">
+    </div>
+    
+    <div style="margin-bottom:20px">
+      <label class="form-label">PDF File</label>
+      <div class="upload-area" id="pdf-upload" onclick="$('pdf-file').click()">
+        <p>📄 Click or drag PDF</p>
+        <input type="file" id="pdf-file" accept=".pdf">
       </div>
-      
-      <button class="form-btn" onclick="addChapter('${esc(id)}')">Chapter Add Karo ✓</button>
     </div>
     
-    <div style="border-top:1px solid var(--border);padding-top:16px">
-      <h4 style="font-family:var(--fu);font-size:14px;margin-bottom:12px">📚 Existing Chapters (${series.chapters.length})</h4>
-      ${series.chapters.length ? series.chapters.map(ch => `
-        <div style="background:var(--bg3);padding:10px;border-radius:6px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">
-          <div style="font-family:var(--fu);font-size:13px">
-            <strong>Ch.${ch.num}</strong> — ${ch.title || 'No title'} ${ch.pdf ? '(✅ PDF)' : '(❌ No PDF)'}
-          </div>
-          <button class="btn-delete" onclick="deleteChapter('${esc(id)}', ${ch.num})">Delete</button>
+    <button class="form-btn" onclick="addChapter(${idx})">Add Chapter</button>
+    
+    ${series.chapters.length ? `
+      <h4 style="margin-top:20px;margin-bottom:12px;font-family:var(--fu)">Chapters: ${series.chapters.length}</h4>
+      ${series.chapters.map((ch, ci) => `
+        <div style="background:var(--bg3);padding:8px;border-radius:4px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:var(--fu);font-size:12px"><strong>Ch.${ch.num}</strong> - ${esc(ch.title)}</span>
+          <button class="btn-small" onclick="deleteChapter(${idx},${ci})">Delete</button>
         </div>
-      `).join('') : '<p style="color:var(--muted);font-family:var(--fu);font-size:13px">Abhi koi chapter nahi</p>'}
-    </div>
-    
-    <div style="margin-top:20px">
-      <button class="form-btn" onclick="renderAdminPanel()" style="background:var(--bg3);color:var(--text)">← Wapas</button>
-    </div>
+      `).join('')}
+    ` : '<p style="color:var(--muted);margin-top:20px">No chapters</p>'}
   `;
   
   $('admin-content').innerHTML = html;
   
-  // PDF upload
-  const uploadArea = $('pdf-upload');
-  const fileInput = $('pdf-file');
-  window.currentPdfData = null;
+  const pdfUpload = $('pdf-upload');
+  const pdfFile = $('pdf-file');
   
-  uploadArea.addEventListener('click', () => fileInput.click());
-  uploadArea.addEventListener('dragover', e => {
+  pdfUpload.addEventListener('dragover', e => {
     e.preventDefault();
-    uploadArea.classList.add('drag');
+    pdfUpload.style.borderColor = 'var(--accent)';
   });
-  uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag'));
-  uploadArea.addEventListener('drop', async e => {
+  
+  pdfUpload.addEventListener('dragleave', () => {
+    pdfUpload.style.borderColor = '';
+  });
+  
+  pdfUpload.addEventListener('drop', async e => {
     e.preventDefault();
-    uploadArea.classList.remove('drag');
-    if(e.dataTransfer.files.length) {
-      const file = e.dataTransfer.files[0];
+    const file = e.dataTransfer.files[0];
+    if (file) {
       const base64 = await fileToBase64(file);
-      window.currentPdfData = base64;
-      uploadArea.innerHTML = '<p>✅ PDF upload ho gaya!</p>';
+      window.pdfData = base64;
+      pdfUpload.innerHTML = '<p>✅ PDF ready</p>';
     }
   });
   
-  fileInput.addEventListener('change', async e => {
-    if(e.target.files.length) {
-      const file = e.target.files[0];
-      const base64 = await fileToBase64(file);
-      window.currentPdfData = base64;
-      uploadArea.innerHTML = '<p>✅ PDF upload ho gaya!</p>';
+  pdfFile.addEventListener('change', async e => {
+    if (e.target.files[0]) {
+      const base64 = await fileToBase64(e.target.files[0]);
+      window.pdfData = base64;
+      pdfUpload.innerHTML = '<p>✅ PDF ready</p>';
     }
   });
 }
 
-function addChapter(seriesId){
-  const num = parseInt($('edit-ch-num').value);
-  const title = $('edit-ch-title').value.trim();
-  const pdf = window.currentPdfData;
+function addChapter(seriesIdx) {
+  const num = parseInt($('ch-num').value);
+  const title = $('ch-title').value.trim() || `Chapter ${num}`;
   
-  if(!num || !pdf){
-    alert('❌ Chapter number aur PDF dono chahiye!');
+  if (!num || !window.pdfData) {
+    alert('❌ Chapter number and PDF required!');
     return;
   }
   
   const data = getData();
-  const series = data.series.find(s => s.id === seriesId);
-  if(!series) return;
+  const series = data.series[seriesIdx];
   
-  if(series.chapters.find(ch => ch.num === num)){
-    alert('❌ Yeh chapter pehle se hai!');
+  if (series.chapters.find(c => c.num === num)) {
+    alert('❌ Chapter already exists!');
     return;
   }
   
-  series.chapters.push({num, title: title || `Chapter ${num}`, pdf});
-  series.chapters.sort((a,b) => a.num - b.num);
-  series.updatedAt = new Date().toISOString().split('T')[0];
+  series.chapters.push({ num, title, pdf: window.pdfData });
+  series.chapters.sort((a, b) => a.num - b.num);
   
   saveData(data);
-  editSeries(seriesId);
-  alert('✅ Chapter add ho gaya!');
+  editSeries(seriesIdx);
+  window.pdfData = null;
+  alert('✅ Chapter added!');
 }
 
-function deleteChapter(seriesId, chNum){
-  if(!confirm('Chapter delete ho jayega! Kya sure ho?')) return;
+function deleteChapter(seriesIdx, chIdx) {
+  if (!confirm('Delete chapter?')) return;
   
   const data = getData();
-  const series = data.series.find(s => s.id === seriesId);
-  if(!series) return;
-  
-  series.chapters = series.chapters.filter(ch => ch.num !== chNum);
+  data.series[seriesIdx].chapters.splice(chIdx, 1);
   saveData(data);
-  editSeries(seriesId);
-  alert('✅ Chapter delete ho gaya!');
+  editSeries(seriesIdx);
 }
 
-function deleteSeries(id){
-  if(!confirm('Poora series delete ho jayega! Kya sure ho?')) return;
-  
+// ======== PAGES ========
+function showHome() {
   const data = getData();
-  data.series = data.series.filter(s => s.id !== id);
-  saveData(data);
-  renderAdminPanel();
-  alert('✅ Series delete ho gaya!');
-}
-
-// ======================================================================
-//  PDF VIEWER
-// ======================================================================
-function renderPdfViewer(pdfData){
-  const pdfjsLib = window['pdfjs-dist/build/pdf'];
-  const container = $('app');
-  
-  container.innerHTML = `
-    <div class="pdf-viewer">
-      <div class="pdf-controls">
-        <button id="prev-btn" class="pdf-nav">← Pichla Page</button>
-        <span class="pdf-info"><span id="page-num">1</span> / <span id="page-count">0</span></span>
-        <button id="next-btn" class="pdf-nav">Agla Page →</button>
+  let html = `
+    <div class="hero">
+      <h1>HASHIRA<br><span class="grad">HINDI SUB</span></h1>
+      <p>Manga, Manhwa, Manhua — Free Hindi Mein</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary">Read Now</a>
       </div>
-      <div id="pdf-container"></div>
+    </div>
+
+    <div class="sec">
+      <h2 class="sec-title">📚 Series</h2>
+      <div class="sgrid">
+        ${data.series.map(s => `
+          <a href="#series/${esc(s.id)}" class="scard">
+            <img src="${esc(s.cover)}" alt="${esc(s.title)}">
+            <div class="scard-info">
+              <div class="scard-type">${s.type}</div>
+              <div class="scard-name">${esc(s.title)}</div>
+              <div class="scard-meta">
+                <span>⭐ ${s.rating}</span>
+                <span>${s.chapters.length}Ch</span>
+              </div>
+            </div>
+          </a>
+        `).join('')}
+      </div>
     </div>
   `;
-  
-  const loadingTask = pdfjsLib.getDocument(pdfData);
-  loadingTask.promise.then(pdf => {
-    const pdfContainer = $('pdf-container');
-    let currentPage = 1;
-    
-    $('page-count').textContent = pdf.numPages;
-    
-    function renderPage(pageNum) {
-      pdf.getPage(pageNum).then(page => {
-        const scale = 1.5;
-        const viewport = page.getViewport({ scale });
-        
-        const canvas = document.createElement('canvas');
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        canvas.className = 'pdf-page';
-        
-        pdfContainer.innerHTML = '';
-        pdfContainer.appendChild(canvas);
-        
-        page.render({
-          canvasContext: canvas.getContext('2d'),
-          viewport: viewport
-        });
-        
-        $('page-num').textContent = pageNum;
-      });
-    }
-    
-    renderPage(currentPage);
-    
-    $('prev-btn').addEventListener('click', () => {
-      if(currentPage > 1) {
-        currentPage--;
-        renderPage(currentPage);
-      }
-    });
-    
-    $('next-btn').addEventListener('click', () => {
-      if(currentPage < pdf.numPages) {
-        currentPage++;
-        renderPage(currentPage);
-      }
-    });
-  });
+  $('app').innerHTML = html;
 }
 
-// ======================================================================
-//  HOME
-// ======================================================================
-function home(){
+function showSeries(id) {
   const data = getData();
-  const byDate=[...data.series].sort((a,b)=>new Date(b.updatedAt)-new Date(a.updatedAt));
-  const totalCh=data.series.reduce((n,s)=>n+s.chapters.length,0);
-
-  const hero=`
-<div class="hero">
-  <div class="hero-bg"></div><div class="hero-grid"></div>
-  <div class="hero-in">
-    <div class="hero-badge fi"><span class="badge-dot"></span>Hindi Mein Free Manga Reader</div>
-    <h1 class="hero-h1 fi fi1">HASHIRA<br><span class="ghost">HINDI</span><span class="grad"> SUB</span></h1>
-    <p class="hero-sub fi fi2"><strong>Manga, Manhwa, Manhua</strong> — Ab Hindi Mein.<br>Free mein padho, koi registration nahi, koi payment nahi.</p>
-    <div class="hero-btns fi fi3">
-      <a class="btn-p" href="#series/${data.series.length ? data.series[0].id : ''}">Abhi Padho</a>
-      <a class="btn-s" href="#">Explore Karo</a>
-    </div>
-    <div class="hero-stats fi fi4">
-      <div><div class="stat-n"><em>${data.series.length}+</em></div><div class="stat-l">Series</div></div>
-      <div><div class="stat-n"><em>${totalCh}+</em></div><div class="stat-l">Chapters</div></div>
-      <div><div class="stat-n"><em>12K+</em></div><div class="stat-l">Readers</div></div>
-      <div><div class="stat-n"><em>100%</em></div><div class="stat-l">Free</div></div>
-    </div>
-  </div>
-  <div class="hero-diag"></div>
-</div>`;
-
-  const genreTabs=`
-<div class="genre-wrap">
-  <div class="genre-tabs">
-    <button class="gtab act" data-f="all">Sab Kuch</button>
-    <button class="gtab" data-f="manhwa">Manhwa</button>
-    <button class="gtab" data-f="manga">Manga</button>
-    <button class="gtab" data-f="manhua">Manhua</button>
-  </div>
-</div>`;
-
-  const trending=`
-<div class="sec" style="margin-bottom:44px">
-  <div class="sec-hd"><div class="sec-title">Trending Ab</div><a class="sec-link" href="#">Sab Dekho</a></div>
-  <div class="trend-scroll">
-    ${data.series.map((s,i)=>`
-    <a class="trend-card" href="#series/${esc(s.id)}">
-      <div class="trend-rank">${String(i+1).padStart(2,'0')}</div>
-      <img src="${esc(s.cover)}" alt="${esc(s.title)}" loading="lazy">
-      <div class="trend-ov">
-        <div class="trend-type" style="color:${typeColor(s.type)}">${s.type.toUpperCase()}</div>
-        <div class="trend-name">${esc(s.title)}</div>
-        <div class="trend-rat">&#9733; ${s.rating}</div>
-      </div>
-    </a>`).join('')}
-  </div>
-</div>`;
-
-  const grid=`
-<div class="sec" id="sg-sec">
-  <div class="sec-hd">
-    <div class="sec-title">Saari Series</div>
-    <span style="font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:600">${data.series.length} Series</span>
-  </div>
-  <div class="sgrid" id="sgrid">
-    ${data.series.map((s,i)=>{
-      const isNew=new Date('2026-06-21')-new Date(s.updatedAt)<4*864e5;
-      return`<a class="scard fi" style="animation-delay:${i*0.05}s" href="#series/${esc(s.id)}" data-type="${s.type}">
-        ${isNew?'<div class="new-b">NEW</div>':''}
-        <div class="scard-img-wrap"><img src="${esc(s.cover)}" alt="${esc(s.title)}" loading="lazy"></div>
-        <div class="scard-body">
-          <span class="stype ${s.type}">${s.type}</span>
-          <div class="scard-title">${esc(s.title)}</div>
-          <div class="scard-meta">
-            <div class="rat">${starSVG()} ${s.rating}</div>
-            <div class="chs">${s.chapters.length} Ch</div>
-          </div>
+  const series = data.series.find(s => s.id === id);
+  if (!series) return showHome();
+  
+  let html = `
+    <div style="max-width:900px;margin:0 auto;padding:40px 20px">
+      <a href="#" style="color:var(--accent);font-family:var(--fu);margin-bottom:20px;display:inline-block">← Back</a>
+      
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:32px">
+        <img src="${esc(series.cover)}" alt="${esc(series.title)}" style="width:100%;border-radius:8px">
+        <div>
+          <h1 style="font-family:var(--fd);font-size:32px;margin-bottom:8px">${esc(series.title)}</h1>
+          <p style="color:var(--gold);font-family:var(--fu);margin-bottom:16px">⭐ ${series.rating}/10</p>
+          <p style="color:var(--muted);line-height:1.6;margin-bottom:16px">${esc(series.desc)}</p>
+          <p style="color:var(--muted);font-family:var(--fu);font-size:12px">${series.chapters.length} Chapters Available</p>
         </div>
-      </a>`;
-    }).join('')}
-  </div>
-</div>`;
-
-  const recent=`
-<div class="sec">
-  <div class="sec-hd"><div class="sec-title">Haal Mein Update</div><a class="sec-link" href="#">Sab Dekho</a></div>
-  <div class="reclist">
-    ${byDate.filter(s => s.chapters.length).map(s=>`
-    <a class="recitem" href="#series/${esc(s.id)}">
-      <div class="rec-dot" style="background:${typeColor(s.type)}"></div>
-      <img class="rec-cover" src="${esc(s.cover)}" alt="${esc(s.title)}" loading="lazy">
-      <div class="rec-info">
-        <div class="rec-title">${esc(s.title)}</div>
-        <div class="rec-ch">Latest: <b>Chapter ${s.chapters[s.chapters.length-1].num}</b> — ${esc(s.chapters[s.chapters.length-1].title)}</div>
       </div>
-      <div class="rec-date">${timeAgo(s.updatedAt)}</div>
-    </a>`).join('')}
-  </div>
-</div>`;
 
-  $('app').innerHTML=hero+genreTabs+trending+grid+recent;
-
-  document.querySelectorAll('.gtab').forEach(btn=>{
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.gtab').forEach(b=>b.classList.remove('act'));
-      this.classList.add('act');
-      const f=this.dataset.f;
-      document.querySelectorAll('#sgrid .scard').forEach(c=>{
-        c[f==='all'||c.dataset.type===f?'removeAttribute':'setAttribute']('hidden','');
-      });
-    });
-  });
-
-  window.scrollTo(0,0);
-}
-
-// ======================================================================
-//  SERIES PAGE
-// ======================================================================
-function series(id){
-  const data = getData();
-  const s=data.series.find(x=>x.id===id);
-  if(!s)return home();
-  const cs=`background:${typeColor(s.type)}22;color:${typeColor(s.type)}`;
-  $('app').innerHTML=`
-<div class="spage">
-  <div class="crumb fi"><a href="#">Home</a><span>/</span><span>${esc(s.title)}</span></div>
-  <div class="s-hero fi fi1">
-    <div class="s-cover"><img src="${esc(s.cover)}" alt="${esc(s.title)}"></div>
-    <div class="s-info">
-      <div class="s-badge" style="${cs}">${s.type.toUpperCase()}</div>
-      <h1>${esc(s.title)}</h1>
-      <div class="s-rat">&#9733; ${s.rating} <small>/ 10</small></div>
-      <p class="s-desc">${esc(s.desc)}</p>
-      <div class="s-tags">${s.tags.map(t=>`<span class="stag">${esc(t)}</span>`).join('')}</div>
-      <div class="s-meta">Update: <b>${timeAgo(s.updatedAt)}</b> &nbsp;|&nbsp; <b>${s.chapters.length}</b> Chapters</div>
+      <h2 class="sec-title">Chapters</h2>
+      <div class="ch-list">
+        ${series.chapters.length ? series.chapters.map(ch => `
+          <a href="#read/${esc(series.id)}/${ch.num}" class="ch-item">
+            <div class="ch-num">Ch.${ch.num}</div>
+            <div style="flex:1">
+              <div class="ch-name">${esc(ch.title)}</div>
+              <div class="ch-pages">📄 PDF</div>
+            </div>
+          </a>
+        `).join('') : '<p style="color:var(--muted)">No chapters</p>'}
+      </div>
     </div>
-  </div>
-  <div class="ch-list-hd fi fi2">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-    Chapters
-  </div>
-  ${s.chapters.length?s.chapters.map(c=>`
-  <a class="ch-item fi" href="#read/${esc(s.id)}/${c.num}">
-    <div class="ch-num">Ch.${c.num}</div>
-    <div><div class="ch-name">${c.title?esc(c.title):'Chapter '+c.num}</div><div class="ch-pgs">${c.pdf ? '📄 PDF' : 'No PDF'}</div></div>
-    <div class="ch-arr"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></div>
-  </a>`).join(''):'<p class="nodata">Abhi koi chapter nahi.</p>'}
-</div>`;
-  window.scrollTo(0,0);
+  `;
+  $('app').innerHTML = html;
 }
 
-// ======================================================================
-//  READER PAGE
-// ======================================================================
-function read(id,num){
+function showReader(seriesId, chapterNum) {
   const data = getData();
-  const s=data.series.find(x=>x.id===id);
-  if(!s)return home();
-  const idx=s.chapters.findIndex(c=>String(c.num)===String(num));
-  const c=s.chapters[idx];
-  if(!c)return series(id);
+  const series = data.series.find(s => s.id === seriesId);
+  if (!series) return showHome();
   
-  if(!c.pdf){
-    alert('❌ Yeh chapter PDF ke saath available nahi hai!');
-    return series(id);
+  const chapter = series.chapters.find(c => c.num == chapterNum);
+  if (!chapter) return showSeries(seriesId);
+  
+  const prevCh = series.chapters.find(c => c.num == chapterNum - 1);
+  const nextCh = series.chapters.find(c => c.num == chapterNum + 1);
+  
+  let html = `
+    <div class="pdf-viewer">
+      <div class="pdf-controls">
+        <div class="pdf-btns">
+          <button class="pdf-btn" onclick="location.hash='#series/${esc(seriesId)}'">← Series</button>
+          ${prevCh ? `<button class="pdf-btn" onclick="location.hash='#read/${esc(seriesId)}/${prevCh.num}'">← Prev</button>` : '<button class="pdf-btn" disabled>← Prev</button>'}
+          ${nextCh ? `<button class="pdf-btn" onclick="location.hash='#read/${esc(seriesId)}/${nextCh.num}'">Next →</button>` : '<button class="pdf-btn" disabled>Next →</button>'}
+        </div>
+        <span class="pdf-info">${esc(chapter.title)}</span>
+      </div>
+      <iframe src="${esc(chapter.pdf)}" class="pdf-frame"></iframe>
+    </div>
+  `;
+  $('app').innerHTML = html;
+}
+
+// ======== ROUTER ========
+function route() {
+  const hash = location.hash.slice(1).split('/');
+  
+  if (hash[0] === 'series' && hash[1]) {
+    showSeries(hash[1]);
+  } else if (hash[0] === 'read' && hash[1] && hash[2]) {
+    showReader(hash[1], hash[2]);
+  } else {
+    showHome();
   }
-  
-  const prev=s.chapters[idx-1],next=s.chapters[idx+1];
-  
-  const needsGate = s.chapters.length > CHAPTER_GATE && idx === CHAPTER_GATE;
-  
-  const nav=`<div class="rnav" style="margin-bottom:20px">
-    <a class="${prev && prev.pdf?'':'dis'}" href="${prev && prev.pdf?'#read/'+id+'/'+prev.num:'#'}">&#8592; Pichla</a>
-    <a href="#series/${esc(id)}" style="background:var(--bg4)">&#128216; Index</a>
-    <a class="${next && next.pdf?'':'dis'}" href="${next && next.pdf?'#read/'+id+'/'+next.num:'#'}">Agla &#8594;</a>
-  </div>`;
-  
-  $('app').innerHTML=`
-<div class="rpage">
-  <div class="crumb fi"><a href="#">Home</a><span>/</span><a href="#series/${esc(id)}">${esc(s.title)}</a><span>/</span><span>Ch.${esc(String(num))}</span></div>
-  ${nav}
-  <div id="pdf-viewer-container"></div>
-  <div style="text-align:center;margin-top:20px">
-    <a class="btn-back" href="#series/${esc(id)}">&#8592; Saare Chapters</a>
-  </div>
-</div>`;
-  
-  // Move PDF viewer to its container
-  setTimeout(() => {
-    const container = $('pdf-viewer-container');
-    renderPdfViewer(c.pdf);
-    const viewer = $('pdf-viewer');
-    if(viewer && container) container.appendChild(viewer);
-  }, 100);
-  
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
-
-// ======================================================================
-//  ROUTER
-// ======================================================================
-function route(){
-  const p=location.hash.slice(1).split('/');
-  if(p[0]==='series'&&p[1])return series(p[1]);
-  if(p[0]==='read'&&p[1]&&p[2])return read(p[1],p[2]);
-  home();
-}
-
-// ======================================================================
-//  INIT
-// ======================================================================
-initStorage();
-initTicker();
-
-$('admin-toggle').addEventListener('click', showAdminModal);
-$('admin-close').addEventListener('click', closeAdminModal);
 
 window.addEventListener('hashchange', route);
 route();
