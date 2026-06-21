@@ -37,7 +37,7 @@ button{border:none;cursor:pointer;font-family:inherit;background:none}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:100;height:60px;background:rgba(9,9,16,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;gap:18px}
+header{position:sticky;top:0;z-index:100;height:60px;background:rgba(9,9,16,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;gap:16px;justify-content:space-between}
 .logo{font-family:var(--fd);font-size:24px;letter-spacing:3px;flex-shrink:0;line-height:1.1;display:flex;flex-direction:column}
 .logo-accent{color:var(--accent)}
 .logo-sub{font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:-2px}
@@ -50,14 +50,16 @@ header{position:sticky;top:0;z-index:100;height:60px;background:rgba(9,9,16,.88)
 .srch svg{color:var(--muted);flex-shrink:0;width:13px;height:13px}
 .srch input{background:none;border:none;outline:none;color:var(--text);font-family:var(--fu);font-size:14px;font-weight:500;width:100%}
 .srch input::placeholder{color:var(--muted)}
+.admin-btn{background:var(--accent);color:#fff;padding:6px 14px;border-radius:6px;font-family:var(--fu);font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;transition:all .2s;cursor:pointer}
+.admin-btn:hover{background:var(--orange)}
 
 /* HERO */
 .hero{position:relative;padding:64px 20px 100px;overflow:hidden;background:linear-gradient(180deg,rgba(232,33,60,.04) 0%,transparent 100%)}
 .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 15% 55%,rgba(232,33,60,.13) 0%,transparent 55%),radial-gradient(ellipse at 85% 15%,rgba(61,139,255,.07) 0%,transparent 45%)}
-.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px}
 .hero-diag{position:absolute;bottom:-1px;left:0;right:0;height:70px;background:var(--bg);clip-path:polygon(0 100%,100% 0,100% 100%);pointer-events:none}
 .hero-in{max-width:1100px;margin:0 auto;position:relative}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,33,60,.12);border:1px solid rgba(232,33,60,.28);padding:5px 14px;border-radius:30px;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,33,60,.12);border:1px solid rgba(232,33,60,.28);padding:5px 14px;border-radius:30px;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
 .badge-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
 .hero-h1{font-family:var(--fd);font-size:clamp(52px,9vw,108px);line-height:.9;letter-spacing:2px;margin-bottom:8px}
@@ -66,9 +68,9 @@ header{position:sticky;top:0;z-index:100;height:60px;background:rgba(9,9,16,.88)
 .hero-sub{font-family:var(--fu);font-size:17px;font-weight:500;color:var(--muted);margin-bottom:28px;line-height:1.5}
 .hero-sub strong{color:var(--text);font-weight:700}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
-.btn-p{background:linear-gradient(130deg,var(--accent),var(--orange));color:#fff;padding:11px 26px;border-radius:var(--r);font-family:var(--fu);font-size:15px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 22px rgba(232,33,60,.3)}
+.btn-p{background:linear-gradient(130deg,var(--accent),var(--orange));color:#fff;padding:11px 26px;border-radius:var(--r);font-family:var(--fu);font-size:15px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;transition:all .24s;text-decoration:none;display:inline-block}
 .btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,33,60,.45)}
-.btn-s{background:var(--bg3);color:var(--text);padding:11px 26px;border-radius:var(--r);font-family:var(--fu);font-size:15px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border:1px solid var(--border);transition:all .2s}
+.btn-s{background:var(--bg3);color:var(--text);padding:11px 26px;border-radius:var(--r);font-family:var(--fu);font-size:15px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:all .24s}
 .btn-s:hover{border-color:rgba(255,255,255,.18);background:var(--bg4)}
 .hero-stats{display:flex;gap:36px;flex-wrap:wrap}
 .stat-n{font-family:var(--fd);font-size:38px;line-height:1;margin-bottom:2px;background:linear-gradient(135deg,var(--text),rgba(255,255,255,.6));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -86,7 +88,7 @@ header{position:sticky;top:0;z-index:100;height:60px;background:rgba(9,9,16,.88)
 /* GENRE TABS */
 .genre-wrap{padding:20px 0 0}
 .genre-tabs{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.gtab{font-family:var(--fu);font-size:13px;font-weight:700;padding:7px 18px;border-radius:30px;background:var(--bg3);color:var(--muted);border:1px solid var(--border);cursor:pointer;transition:all .2s;letter-spacing:.3px}
+.gtab{font-family:var(--fu);font-size:13px;font-weight:700;padding:7px 18px;border-radius:30px;background:var(--bg3);color:var(--muted);border:1px solid var(--border);cursor:pointer;transition:all .2s}
 .gtab:hover{color:var(--text);border-color:rgba(255,255,255,.15)}
 .gtab.act{color:#fff;border-color:transparent}
 .gtab.act[data-f="all"]{background:var(--accent)}
@@ -177,6 +179,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
 .ch-pgs{font-family:var(--fu);font-size:11px;color:var(--muted);font-weight:500}
 .ch-arr{margin-left:auto;color:var(--muted)}
 .nodata{font-family:var(--fu);font-size:14px;color:var(--muted);padding:20px 0}
+.shortner-required{background:rgba(255,122,26,.15);border:1px solid rgba(255,122,26,.3);padding:16px;border-radius:var(--r);margin:20px 0;color:var(--orange);font-family:var(--fu);text-align:center}
 
 /* READER */
 .rpage{max-width:780px;margin:0 auto;padding:20px}
@@ -192,6 +195,34 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
 .btn-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--fu);font-size:14px;font-weight:700;color:var(--accent);border:1px solid rgba(232,33,60,.28);padding:9px 20px;border-radius:var(--r);transition:all .2s}
 .btn-back:hover{background:rgba(232,33,60,.1)}
 
+/* ADMIN PANEL */
+.admin-modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}
+.admin-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);width:100%;max-width:700px;max-height:90vh;overflow-y:auto;padding:30px}
+.admin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.admin-title{font-family:var(--fd);font-size:28px;letter-spacing:2px}
+.admin-close{font-size:24px;cursor:pointer;color:var(--muted);transition:color .2s}
+.admin-close:hover{color:var(--text)}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-family:var(--fu);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:6px;font-family:var(--fb);font-size:14px;transition:border-color .2s}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--accent)}
+.form-textarea{resize:vertical;min-height:100px;font-family:var(--fu)}
+.form-btn{background:var(--accent);color:#fff;padding:11px 22px;border-radius:6px;font-family:var(--fu);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;width:100%}
+.form-btn:hover{background:var(--orange);transform:translateY(-2px)}
+.form-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.series-list{margin-top:24px;border-top:1px solid var(--border);padding-top:24px}
+.series-item{background:var(--bg3);padding:14px;border-radius:6px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.series-item-info h4{font-family:var(--fu);font-size:14px;margin-bottom:4px}
+.series-item-info p{font-family:var(--fu);font-size:12px;color:var(--muted)}
+.btn-edit,.btn-delete{padding:6px 12px;border-radius:4px;font-family:var(--fu);font-size:11px;font-weight:700;cursor:pointer;transition:all .2s}
+.btn-edit{background:var(--blue);color:#fff}
+.btn-edit:hover{background:rgba(61,139,255,.7)}
+.btn-delete{background:rgba(232,33,60,.2);color:var(--accent)}
+.btn-delete:hover{background:rgba(232,33,60,.4)}
+.msg{padding:12px 16px;border-radius:6px;margin-bottom:16px;font-family:var(--fu);font-size:13px;font-weight:600}
+.msg.success{background:rgba(34,204,136,.15);color:var(--green);border:1px solid rgba(34,204,136,.3)}
+.msg.error{background:rgba(232,33,60,.15);color:var(--accent);border:1px solid rgba(232,33,60,.3)}
+
 /* FADE-IN */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .fi{animation:fadeUp .38s ease both}
@@ -199,8 +230,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
 
 /* RESPONSIVE */
 @media(max-width:900px){.foot-in{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.hero{padding:36px 16px 80px}.hero-h1{font-size:clamp(44px,12vw,80px)}.hero-stats{gap:20px}.hnav{display:none}.s-hero{grid-template-columns:140px 1fr}.s-info h1{font-size:24px}}
-@media(max-width:500px){.s-hero{grid-template-columns:1fr}.s-cover img{max-width:180px;margin:0 auto}.srch{display:none}.foot-in{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr))}}
+@media(max-width:700px){.hero{padding:36px 16px 80px}.hero-h1{font-size:clamp(44px,12vw,80px)}.hero-stats{gap:20px}.hnav{display:none}.s-hero{grid-template-columns:140px 1fr}.s-info h1{font-size:24px}.srch{display:none}.foot-in{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
+@media(max-width:500px){.s-hero{grid-template-columns:1fr}.s-cover img{max-width:180px;margin:0 auto}.admin-box{padding:20px}.series-item{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -220,6 +251,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
     <input type="text" placeholder="Series dhundho...">
   </div>
+  <button class="admin-btn" id="admin-toggle">🔐 Admin</button>
 </header>
 
 <div id="app"></div>
@@ -249,83 +281,101 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
   </div>
 </footer>
 
+<!-- ADMIN MODAL -->
+<div id="admin-modal" style="display:none">
+  <div class="admin-box">
+    <div class="admin-header">
+      <div class="admin-title">Admin Panel</div>
+      <span class="admin-close" id="admin-close">✕</span>
+    </div>
+    <div id="admin-content"></div>
+  </div>
+</div>
+
 <script>
 // ======================================================================
-//  DATA — yahan apna content daalo
+//  CONFIG
 // ======================================================================
-const DATA = {
-  announcements: [
-    "NAYA   Solo Leveling Ch.3 Upload Ho Gaya — Abhi Padho!",
-    "UPDATE   Omniscient Reader Ch.2 Hindi Mein Update!",
-    "COMING   Tower of God Season 2 Jald Aayega!",
-    "JOIN   Hamare Discord Server Par — Link Footer Mein!",
-    "NAYA   One Piece Ch.2 Upload — Zoro Arc Shuru!"
-  ],
-  series: [
-    {
-      id:"solo-leveling",title:"Solo Leveling",type:"manhwa",
-      cover:"https://picsum.photos/seed/slvlhindi/300/420",
-      desc:"Sung Jinwoo — duniya ka sabse kamzor hunter tha. Ek mysterious double dungeon mein near-death experience ke baad usne ek 'System' se connection banaya jo sirf ussi ko dikhta hai. Ab woh level up karta hai — unlimited. Sabse kamzor se sabse takatwar tak ka yeh safar ek legend banaega.",
-      rating:9.8,tags:["Action","Fantasy","System","OP MC"],updatedAt:"2026-06-20",
-      chapters:[
-        {num:1,title:"Sabse Kamzoor Hunter",pages:["https://picsum.photos/seed/sl1aa/800/1200","https://picsum.photos/seed/sl1bb/800/1200","https://picsum.photos/seed/sl1cc/800/1200"]},
-        {num:2,title:"Double Dungeon Ka Raaz",pages:["https://picsum.photos/seed/sl2aa/800/1200","https://picsum.photos/seed/sl2bb/800/1200"]},
-        {num:3,title:"System Activate Hua",pages:["https://picsum.photos/seed/sl3aa/800/1200","https://picsum.photos/seed/sl3bb/800/1200","https://picsum.photos/seed/sl3cc/800/1200"]}
-      ]
-    },
-    {
-      id:"omniscient-reader",title:"Omniscient Reader",type:"manhwa",
-      cover:"https://picsum.photos/seed/orvhnd77/300/420",
-      desc:"Dokja Kim ne 'Three Ways to Survive in a Ruined World' novel 10 saal padhi — aur woh akela tha jo usse end tak padha. Tab duniya exactly us novel jaisi ban gayi. Ab woh akela hai jo jaanta hai kya hoga aage — aur yeh jaankari hi uski sabse badi taakat hai.",
-      rating:9.6,tags:["Fantasy","Action","Mystery","Meta"],updatedAt:"2026-06-19",
-      chapters:[
-        {num:1,title:"Novel Ka Akhiri Chapter",pages:["https://picsum.photos/seed/orv1aa/800/1200","https://picsum.photos/seed/orv1bb/800/1200"]},
-        {num:2,title:"Apocalypse Scenario 1",pages:["https://picsum.photos/seed/orv2aa/800/1200","https://picsum.photos/seed/orv2bb/800/1200"]}
-      ]
-    },
-    {
-      id:"tower-of-god",title:"Tower of God",type:"manhwa",
-      cover:"https://picsum.photos/seed/toghindi3/300/420",
-      desc:"Bam ne Rachel ko dhundhne ke liye uss Tower mein ghus gaya — woh Tower jahan har wish puri hoti hai agar tum top pahuncho. Par Tower ke tests khatarnak hain, aur har insaan apna ek bada secret chhupaata hai.",
-      rating:9.3,tags:["Action","Adventure","Mystery","Politics"],updatedAt:"2026-06-18",
-      chapters:[
-        {num:1,title:"Tower Ka Pehla Darwaza",pages:["https://picsum.photos/seed/tog1aa/800/1200","https://picsum.photos/seed/tog1bb/800/1200"]},
-        {num:2,title:"Shinsu — Tower Ki Taakat",pages:["https://picsum.photos/seed/tog2aa/800/1200"]}
-      ]
-    },
-    {
-      id:"beginning-after-end",title:"The Beginning After the End",type:"manhwa",
-      cover:"https://picsum.photos/seed/tbatehnd9/300/420",
-      desc:"King Grey — ek aise duniya ka sabse powerful raja — ek nayi magical duniya mein reborn hua as Arthur Leywin. Is baar woh sab galtiyan nahi karega. Power nahi, connections nahi — sirf sachchi zindagi aur asli relationships.",
-      rating:9.1,tags:["Fantasy","Reincarnation","Magic","Action"],updatedAt:"2026-06-17",
-      chapters:[
-        {num:1,title:"Naya Janam, Naya Mauqa",pages:["https://picsum.photos/seed/tbate1aa/800/1200","https://picsum.photos/seed/tbate1bb/800/1200"]}
-      ]
-    },
-    {
-      id:"one-piece",title:"One Piece",type:"manga",
-      cover:"https://picsum.photos/seed/ophindi55/300/420",
-      desc:"Monkey D. Luffy ka ek hi sapna — Raja Pirate banna! Gol D. Roger ka legendary khazana 'One Piece' dhundhne ke liye woh apna dream crew banaata hai aur Grand Line ki khatarnak aur jaadui duniya mein kadam rakhta hai.",
-      rating:9.5,tags:["Action","Adventure","Comedy","Pirate"],updatedAt:"2026-06-16",
-      chapters:[
-        {num:1,title:"Shaitan Ka Fal — Gomu Gomu no Mi",pages:["https://picsum.photos/seed/op1aa/800/1200","https://picsum.photos/seed/op1bb/800/1200","https://picsum.photos/seed/op1cc/800/1200"]},
-        {num:2,title:"Pirate Hunter Roronoa Zoro",pages:["https://picsum.photos/seed/op2aa/800/1200","https://picsum.photos/seed/op2bb/800/1200"]}
-      ]
-    },
-    {
-      id:"martial-peak",title:"Martial Peak",type:"manhua",
-      cover:"https://picsum.photos/seed/mpkhindi2/300/420",
-      desc:"Yang Kai — martial arts sect ka ek saadharan sweeper disciple. Ek raat usne ek mysterious Wordless Black Book dhoondha jo ushe ek gupt taakat deta hai. Ab woh martial arts ki duniya mein survive karta hai — aur ooncha uthta jaata hai.",
-      rating:8.7,tags:["Action","Cultivation","Fantasy","Romance"],updatedAt:"2026-06-14",
-      chapters:[
-        {num:1,title:"Kaali Kitaab",pages:["https://picsum.photos/seed/mp1aa/800/1200","https://picsum.photos/seed/mp1bb/800/1200"]},
-        {num:2,title:"Gupt Cultivation Shuru",pages:["https://picsum.photos/seed/mp2aa/800/1200"]}
-      ]
-    }
-  ]
-};
+const ADMIN_ID = "hashirahindisub";
+const SHORTENER_API = "7f3db1cbf6409f49ac615f382d4c8260dc354812";
+const SHORTENER_URL = "https://arolinks.com/api/short";
+const CHAPTER_GATE = 10; // After 10 chapters, require shortener
 
-const ALL_TAGS = ["Action","Fantasy","Romance","School Life","System","OP MC","Adventure","Mystery","Comedy","Magic","Cultivation","Reincarnation","Supernatural","Horror","Sports","Slice of Life","Mecha","Sci-Fi","Historical","Martial Arts","Harem","Thriller"];
+// ======================================================================
+//  LOCAL STORAGE INIT
+// ======================================================================
+function initStorage(){
+  if(!localStorage.getItem('hashira_data')){
+    localStorage.setItem('hashira_data', JSON.stringify(defaultData()));
+  }
+}
+
+function defaultData(){
+  return {
+    announcements: [
+      "NAYA   Solo Leveling Ch.3 Upload Ho Gaya — Abhi Padho!",
+      "UPDATE   Omniscient Reader Ch.2 Hindi Mein Update!",
+      "COMING   Tower of God Season 2 Jald Aayega!",
+      "JOIN   Hamare Discord Server Par — Link Footer Mein!",
+      "NAYA   One Piece Ch.2 Upload — Zoro Arc Shuru!"
+    ],
+    series: [
+      {
+        id:"solo-leveling",title:"Solo Leveling",type:"manhwa",
+        cover:"https://picsum.photos/seed/slvlhindi/300/420",
+        desc:"Sung Jinwoo — duniya ka sabse kamzor hunter tha. Ek mysterious double dungeon mein near-death experience ke baad usne ek 'System' se connection banaya jo sirf ussi ko dikhta hai.",
+        rating:9.8,tags:["Action","Fantasy","System","OP MC"],updatedAt:"2026-06-20",
+        chapters:[
+          {num:1,title:"Sabse Kamzoor Hunter",pages:["https://picsum.photos/seed/sl1aa/800/1200","https://picsum.photos/seed/sl1bb/800/1200","https://picsum.photos/seed/sl1cc/800/1200"]},
+          {num:2,title:"Double Dungeon Ka Raaz",pages:["https://picsum.photos/seed/sl2aa/800/1200","https://picsum.photos/seed/sl2bb/800/1200"]},
+          {num:3,title:"System Activate Hua",pages:["https://picsum.photos/seed/sl3aa/800/1200","https://picsum.photos/seed/sl3bb/800/1200","https://picsum.photos/seed/sl3cc/800/1200"]}
+        ]
+      },
+      {
+        id:"omniscient-reader",title:"Omniscient Reader",type:"manhwa",
+        cover:"https://picsum.photos/seed/orvhnd77/300/420",
+        desc:"Dokja Kim ne 'Three Ways to Survive in a Ruined World' novel 10 saal padhi — aur woh akela tha jo usse end tak padha.",
+        rating:9.6,tags:["Fantasy","Action","Mystery","Meta"],updatedAt:"2026-06-19",
+        chapters:[
+          {num:1,title:"Novel Ka Akhiri Chapter",pages:["https://picsum.photos/seed/orv1aa/800/1200","https://picsum.photos/seed/orv1bb/800/1200"]},
+          {num:2,title:"Apocalypse Scenario 1",pages:["https://picsum.photos/seed/orv2aa/800/1200","https://picsum.photos/seed/orv2bb/800/1200"]}
+        ]
+      }
+    ]
+  };
+}
+
+function getData(){
+  return JSON.parse(localStorage.getItem('hashira_data'));
+}
+
+function saveData(data){
+  localStorage.setItem('hashira_data', JSON.stringify(data));
+}
+
+// ======================================================================
+//  SHORTENER SERVICE
+// ======================================================================
+async function shortenUrl(longUrl){
+  try{
+    const response = await fetch(SHORTENER_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        url: longUrl,
+        api_token: SHORTENER_API
+      })
+    });
+    const data = await response.json();
+    if(data.success) return data.short_url;
+    return null;
+  } catch(e){
+    console.error('Shortener error:', e);
+    return null;
+  }
+}
 
 // ======================================================================
 //  UTILS
@@ -353,16 +403,198 @@ function starSVG(){return`<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9
 //  TICKER
 // ======================================================================
 function initTicker(){
-  const items=[...DATA.announcements,...DATA.announcements];
+  const data = getData();
+  const items=[...data.announcements,...data.announcements];
   $('ttk').innerHTML=items.map(a=>`<span class="ticker-item"><span class="ticker-dot"></span>${esc(a)}</span>`).join('');
+}
+
+// ======================================================================
+//  ADMIN MODAL
+// ======================================================================
+function showAdminModal(){
+  const modal = $('admin-modal');
+  const pwd = prompt('Admin ID verify karo (password):');
+  if(pwd !== ADMIN_ID){
+    alert('Galat ID! Sirf admin use kar sakta hai.');
+    return;
+  }
+  modal.style.display = 'flex';
+  renderAdminPanel();
+}
+
+function closeAdminModal(){
+  $('admin-modal').style.display = 'none';
+}
+
+function renderAdminPanel(){
+  const data = getData();
+  const series = data.series;
+  
+  let html = `
+    <div class="form-group">
+      <div class="form-label">Naya Series Add Karo</div>
+      <input type="text" id="adm-title" placeholder="Title" class="form-input" style="margin-bottom:10px">
+      <select id="adm-type" class="form-select" style="margin-bottom:10px">
+        <option value="manhwa">Manhwa</option>
+        <option value="manga">Manga</option>
+        <option value="manhua">Manhua</option>
+      </select>
+      <input type="text" id="adm-cover" placeholder="Cover Image URL" class="form-input" style="margin-bottom:10px">
+      <textarea id="adm-desc" placeholder="Description" class="form-textarea" style="margin-bottom:10px"></textarea>
+      <input type="number" id="adm-rating" placeholder="Rating (0-10)" min="0" max="10" step="0.1" class="form-input" style="margin-bottom:10px">
+      <input type="text" id="adm-tags" placeholder="Tags (comma separated)" class="form-input" style="margin-bottom:10px">
+      <button class="form-btn" onclick="addNewSeries()">Add Series ✓</button>
+    </div>
+    
+    <div class="series-list">
+      <h3 style="font-family:var(--fd);font-size:18px;margin-bottom:16px">Chapters Manage Karo</h3>
+      ${series.map(s => `
+        <div class="series-item">
+          <div class="series-item-info">
+            <h4>${esc(s.title)}</h4>
+            <p style="color:var(--muted)">${s.chapters.length} chapters | ${s.type}</p>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn-edit" onclick="editSeries('${esc(s.id)}')">Edit</button>
+            <button class="btn-delete" onclick="deleteSeries('${esc(s.id)}')">Delete</button>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  
+  $('admin-content').innerHTML = html;
+}
+
+function addNewSeries(){
+  const title = $('adm-title').value.trim();
+  const type = $('adm-type').value;
+  const cover = $('adm-cover').value.trim();
+  const desc = $('adm-desc').value.trim();
+  const rating = parseFloat($('adm-rating').value) || 0;
+  const tags = $('adm-tags').value.split(',').map(t => t.trim()).filter(t => t);
+  
+  if(!title || !cover || !desc){
+    alert('Sab fields fill karo!');
+    return;
+  }
+  
+  const id = title.toLowerCase().replace(/\s+/g, '-');
+  const data = getData();
+  
+  if(data.series.find(s => s.id === id)){
+    alert('Yeh series pehle se hai!');
+    return;
+  }
+  
+  data.series.push({
+    id, title, type, cover, desc, rating, tags,
+    updatedAt: new Date().toISOString().split('T')[0],
+    chapters: []
+  });
+  
+  saveData(data);
+  renderAdminPanel();
+  alert('Series add ho gaya! Ab chapters add karo.');
+}
+
+function editSeries(id){
+  const data = getData();
+  const series = data.series.find(s => s.id === id);
+  if(!series) return;
+  
+  let html = `
+    <h3 style="font-family:var(--fd);font-size:20px;margin-bottom:16px">Edit: ${esc(series.title)}</h3>
+    
+    <div class="form-group">
+      <div class="form-label">Chapters Add/Edit Karo</div>
+      <div style="background:var(--bg3);padding:14px;border-radius:6px;margin-bottom:14px">
+        <div style="font-family:var(--fu);font-size:12px;color:var(--muted);margin-bottom:10px">Chapter #:</div>
+        <input type="number" id="edit-ch-num" placeholder="Chapter Number" class="form-input" style="margin-bottom:10px">
+        <input type="text" id="edit-ch-title" placeholder="Chapter Title (optional)" class="form-input" style="margin-bottom:10px">
+        <textarea id="edit-ch-pages" placeholder="Image URLs (ek line par ek URL)" class="form-textarea" style="margin-bottom:10px"></textarea>
+        <button class="form-btn" onclick="addChapter('${esc(id)}')">Chapter Add Karo ✓</button>
+      </div>
+    </div>
+    
+    <div style="border-top:1px solid var(--border);padding-top:16px">
+      <h4 style="font-family:var(--fu);font-size:14px;margin-bottom:12px">Existing Chapters (${series.chapters.length})</h4>
+      ${series.chapters.length ? series.chapters.map(ch => `
+        <div style="background:var(--bg3);padding:10px;border-radius:6px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">
+          <div style="font-family:var(--fu);font-size:13px">
+            <strong>Ch.${ch.num}</strong> — ${ch.title || 'No title'} (${ch.pages.length} pages)
+          </div>
+          <button class="btn-delete" onclick="deleteChapter('${esc(id)}', ${ch.num})">Delete</button>
+        </div>
+      `).join('') : '<p style="color:var(--muted);font-family:var(--fu);font-size:13px">Abhi koi chapter nahi</p>'}
+    </div>
+    
+    <div style="margin-top:20px">
+      <button class="form-btn" onclick="renderAdminPanel()" style="background:var(--bg3);color:var(--text)">← Wapas</button>
+    </div>
+  `;
+  
+  $('admin-content').innerHTML = html;
+}
+
+function addChapter(seriesId){
+  const num = parseInt($('edit-ch-num').value);
+  const title = $('edit-ch-title').value.trim();
+  const pagesText = $('edit-ch-pages').value.trim();
+  
+  if(!num || !pagesText){
+    alert('Chapter number aur images dono chahiye!');
+    return;
+  }
+  
+  const pages = pagesText.split('\n').map(u => u.trim()).filter(u => u);
+  
+  const data = getData();
+  const series = data.series.find(s => s.id === seriesId);
+  if(!series) return;
+  
+  if(series.chapters.find(ch => ch.num === num)){
+    alert('Yeh chapter pehle se hai!');
+    return;
+  }
+  
+  series.chapters.push({num, title: title || `Chapter ${num}`, pages});
+  series.chapters.sort((a,b) => a.num - b.num);
+  series.updatedAt = new Date().toISOString().split('T')[0];
+  
+  saveData(data);
+  editSeries(seriesId);
+  alert('Chapter add ho gaya!');
+}
+
+function deleteChapter(seriesId, chNum){
+  if(!confirm('Kya sure ho?')) return;
+  
+  const data = getData();
+  const series = data.series.find(s => s.id === seriesId);
+  if(!series) return;
+  
+  series.chapters = series.chapters.filter(ch => ch.num !== chNum);
+  saveData(data);
+  editSeries(seriesId);
+}
+
+function deleteSeries(id){
+  if(!confirm('Poora series delete ho jayega! Kya sure ho?')) return;
+  
+  const data = getData();
+  data.series = data.series.filter(s => s.id !== id);
+  saveData(data);
+  renderAdminPanel();
 }
 
 // ======================================================================
 //  HOME
 // ======================================================================
 function home(){
-  const byDate=[...DATA.series].sort((a,b)=>new Date(b.updatedAt)-new Date(a.updatedAt));
-  const totalCh=DATA.series.reduce((n,s)=>n+s.chapters.length,0);
+  const data = getData();
+  const byDate=[...data.series].sort((a,b)=>new Date(b.updatedAt)-new Date(a.updatedAt));
+  const totalCh=data.series.reduce((n,s)=>n+s.chapters.length,0);
 
   const hero=`
 <div class="hero">
@@ -372,11 +604,11 @@ function home(){
     <h1 class="hero-h1 fi fi1">HASHIRA<br><span class="ghost">HINDI</span><span class="grad"> SUB</span></h1>
     <p class="hero-sub fi fi2"><strong>Manga, Manhwa, Manhua</strong> — Ab Hindi Mein.<br>Free mein padho, koi registration nahi, koi payment nahi.</p>
     <div class="hero-btns fi fi3">
-      <a class="btn-p" href="#series/solo-leveling">Abhi Padho</a>
+      <a class="btn-p" href="#series/${data.series.length ? data.series[0].id : ''}">Abhi Padho</a>
       <a class="btn-s" href="#">Explore Karo</a>
     </div>
     <div class="hero-stats fi fi4">
-      <div><div class="stat-n"><em>${DATA.series.length}+</em></div><div class="stat-l">Series</div></div>
+      <div><div class="stat-n"><em>${data.series.length}+</em></div><div class="stat-l">Series</div></div>
       <div><div class="stat-n"><em>${totalCh}+</em></div><div class="stat-l">Chapters</div></div>
       <div><div class="stat-n"><em>12K+</em></div><div class="stat-l">Readers</div></div>
       <div><div class="stat-n"><em>100%</em></div><div class="stat-l">Free</div></div>
@@ -399,7 +631,7 @@ function home(){
 <div class="sec" style="margin-bottom:44px">
   <div class="sec-hd"><div class="sec-title">Trending Ab</div><a class="sec-link" href="#">Sab Dekho</a></div>
   <div class="trend-scroll">
-    ${DATA.series.map((s,i)=>`
+    ${data.series.map((s,i)=>`
     <a class="trend-card" href="#series/${esc(s.id)}">
       <div class="trend-rank">${String(i+1).padStart(2,'0')}</div>
       <img src="${esc(s.cover)}" alt="${esc(s.title)}" loading="lazy">
@@ -416,10 +648,10 @@ function home(){
 <div class="sec" id="sg-sec">
   <div class="sec-hd">
     <div class="sec-title">Saari Series</div>
-    <span style="font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:600">${DATA.series.length} Series</span>
+    <span style="font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:600">${data.series.length} Series</span>
   </div>
   <div class="sgrid" id="sgrid">
-    ${DATA.series.map((s,i)=>{
+    ${data.series.map((s,i)=>{
       const isNew=new Date('2026-06-21')-new Date(s.updatedAt)<4*864e5;
       return`<a class="scard fi" style="animation-delay:${i*0.05}s" href="#series/${esc(s.id)}" data-type="${s.type}">
         ${isNew?'<div class="new-b">NEW</div>':''}
@@ -435,12 +667,6 @@ function home(){
       </a>`;
     }).join('')}
   </div>
-</div>`;
-
-  const tags=`
-<div class="sec" style="margin-bottom:0;padding-bottom:46px">
-  <div class="sec-hd"><div class="sec-title">Popular Tags</div></div>
-  <div class="tags">${ALL_TAGS.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
 </div>`;
 
   const recent=`
@@ -460,9 +686,8 @@ function home(){
   </div>
 </div>`;
 
-  $('app').innerHTML=hero+genreTabs+trending+grid+tags+recent;
+  $('app').innerHTML=hero+genreTabs+trending+grid+recent;
 
-  // Genre filter logic
   document.querySelectorAll('.gtab').forEach(btn=>{
     btn.addEventListener('click',function(){
       document.querySelectorAll('.gtab').forEach(b=>b.classList.remove('act'));
@@ -481,7 +706,8 @@ function home(){
 //  SERIES PAGE
 // ======================================================================
 function series(id){
-  const s=DATA.series.find(x=>x.id===id);
+  const data = getData();
+  const s=data.series.find(x=>x.id===id);
   if(!s)return home();
   const cs=`background:${typeColor(s.type)}22;color:${typeColor(s.type)}`;
   $('app').innerHTML=`
@@ -516,17 +742,35 @@ function series(id){
 //  READER PAGE
 // ======================================================================
 function read(id,num){
-  const s=DATA.series.find(x=>x.id===id);
+  const data = getData();
+  const s=data.series.find(x=>x.id===id);
   if(!s)return home();
   const idx=s.chapters.findIndex(c=>String(c.num)===String(num));
   const c=s.chapters[idx];
   if(!c)return series(id);
   const prev=s.chapters[idx-1],next=s.chapters[idx+1];
+  
+  // Check if shortener gate needed
+  const needsGate = s.chapters.length > CHAPTER_GATE && idx === CHAPTER_GATE;
+  
   const nav=`<div class="rnav">
     <a class="${prev?'':'dis'}" href="${prev?'#read/'+id+'/'+prev.num:'#'}">&#8592; Pichla</a>
     <a href="#series/${esc(id)}" style="background:var(--bg4)">&#128216; Index</a>
     <a class="${next?'':'dis'}" href="${next?'#read/'+id+'/'+next.num:'#'}">Agla &#8594;</a>
   </div>`;
+  
+  let gateHTML = '';
+  if(needsGate){
+    gateHTML = `
+    <div class="shortner-required">
+      <p style="margin-bottom:12px">🔗 <strong>Aur chapters padne ke liye shortener solve karo!</strong></p>
+      <p style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:10px">Ye link share karo aur phir short link use kar:</p>
+      <button onclick="generateShortLink()" class="form-btn" style="background:var(--orange);width:auto;padding:8px 16px">Short Link Generate Karo</button>
+      <div id="short-link-result"></div>
+    </div>
+    `;
+  }
+  
   $('app').innerHTML=`
 <div class="rpage">
   <div class="crumb fi"><a href="#">Home</a><span>/</span><a href="#series/${esc(id)}">${esc(s.title)}</a><span>/</span><span>Ch.${esc(String(num))}</span></div>
@@ -534,11 +778,30 @@ function read(id,num){
     <div><div class="rtitle">${esc(s.title)}</div><div class="rch">Chapter ${esc(String(num))}${c.title?' — '+esc(c.title):''}</div></div>
     ${nav}
   </div>
+  ${gateHTML}
   <div class="rimgs fi fi2">${c.pages.map((p,i)=>`<img src="${esc(p)}" alt="Page ${i+1}" loading="${i<2?'eager':'lazy'}">`).join('')}</div>
   <div class="rnav-btm fi fi3">${nav}<a class="btn-back" href="#series/${esc(id)}">&#8592; Saare Chapters</a></div>
 </div>`;
   window.scrollTo(0,0);
 }
+
+window.generateShortLink = async function(){
+  const result = $('short-link-result');
+  result.innerHTML = '<p style="color:var(--muted);margin-top:10px">Generate ho raha hai...</p>';
+  
+  const shortUrl = await shortenUrl(window.location.href);
+  if(shortUrl){
+    result.innerHTML = `
+      <div style="margin-top:10px;background:var(--bg3);padding:12px;border-radius:6px">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:6px">Short Link:</p>
+        <input type="text" value="${shortUrl}" readonly style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--accent);padding:8px;border-radius:4px;font-family:var(--fu);font-size:12px" onclick="this.select()">
+        <p style="font-size:11px;color:var(--muted);margin-top:8px">👆 Copy karke share karo. Link solve karke aage bado!</p>
+      </div>
+    `;
+  } else {
+    result.innerHTML = '<p style="color:var(--accent);margin-top:10px">❌ Link generate nahi hua. Baad mein try karo.</p>';
+  }
+};
 
 // ======================================================================
 //  ROUTER
@@ -550,8 +813,16 @@ function route(){
   home();
 }
 
+// ======================================================================
+//  INIT
+// ======================================================================
+initStorage();
 initTicker();
-window.addEventListener('hashchange',route);
+
+$('admin-toggle').addEventListener('click', showAdminModal);
+$('admin-close').addEventListener('click', closeAdminModal);
+
+window.addEventListener('hashchange', route);
 route();
 </script>
 </body>
