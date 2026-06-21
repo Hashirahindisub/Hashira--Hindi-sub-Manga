@@ -2,6 +2,15 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
+  <script>
+window.addEventListener('error', function(e){
+  document.body.innerHTML = '<pre style="color:#fff;background:#111;padding:20px;white-space:pre-wrap;font-size:14px">❌ ERROR:\n' + (e.message || e) + '\n\nFile: ' + (e.filename||'') + '\nLine: ' + (e.lineno||'') + '</pre>';
+});
+window.addEventListener('unhandledrejection', function(e){
+  var r = e.reason;NOTION_TWS[ ]NOTION_TWS
+  document.body.innerHTML = '<pre style="color:#fff;background:#111;padding:20px;white-space:pre-wrap;font-size:14px">❌ PROMISE ERROR:\n' + (r && r.message ? r.message : r) + '</pre>';
+});
+  </script>
 <meta name="google-site-verification" content="GiM14awSfoSf9Vxgv1eFOwqfeFaqCughMw7bkyJ0P30" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hashira Hindi Sub — Manga, Manhwa, Manhua Hindi Mein</title>
