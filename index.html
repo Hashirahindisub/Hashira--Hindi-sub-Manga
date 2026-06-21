@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Hind:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <style>
 :root {
   --bg:#090910;--bg2:#11111c;--bg3:#18182a;--bg4:#222235;
@@ -179,21 +180,19 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
 .ch-pgs{font-family:var(--fu);font-size:11px;color:var(--muted);font-weight:500}
 .ch-arr{margin-left:auto;color:var(--muted)}
 .nodata{font-family:var(--fu);font-size:14px;color:var(--muted);padding:20px 0}
-.shortner-required{background:rgba(255,122,26,.15);border:1px solid rgba(255,122,26,.3);padding:16px;border-radius:var(--r);margin:20px 0;color:var(--orange);font-family:var(--fu);text-align:center}
 
-/* READER */
-.rpage{max-width:780px;margin:0 auto;padding:20px}
-.rhead{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:13px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.rtitle{font-family:var(--fu);font-size:15px;font-weight:700}
-.rch{font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:500}
-.rnav{display:flex;gap:8px}
-.rnav a{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:7px 16px;border-radius:var(--r);font-family:var(--fu);font-size:13px;font-weight:700;transition:all .2s}
-.rnav a:hover{background:var(--accent);border-color:transparent;color:#fff}
-.rnav a.dis{color:var(--muted);pointer-events:none;opacity:.5}
-.rimgs img{width:100%;display:block;margin-bottom:3px;border-radius:5px}
-.rnav-btm{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.btn-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--fu);font-size:14px;font-weight:700;color:var(--accent);border:1px solid rgba(232,33,60,.28);padding:9px 20px;border-radius:var(--r);transition:all .2s}
-.btn-back:hover{background:rgba(232,33,60,.1)}
+/* PDF VIEWER */
+.pdf-viewer{max-width:800px;margin:0 auto;padding:20px}
+.pdf-controls{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:15px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pdf-page{width:100%;border-radius:5px;margin-bottom:10px}
+.pdf-nav{display:flex;gap:8px;align-items:center}
+.pdf-nav button{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:7px 12px;border-radius:var(--r);font-family:var(--fu);font-size:12px;font-weight:700;transition:all .2s;cursor:pointer}
+.pdf-nav button:hover{background:var(--accent);border-color:transparent;color:#fff}
+.pdf-nav button:disabled{opacity:.5;cursor:not-allowed}
+.pdf-info{font-family:var(--fu);font-size:12px;color:var(--muted)}
+
+/* SHORTENER GATE */
+.shortner-required{background:rgba(255,122,26,.15);border:1px solid rgba(255,122,26,.3);padding:16px;border-radius:var(--r);margin:20px 0;color:var(--orange);font-family:var(--fu);text-align:center}
 
 /* ADMIN PANEL */
 .admin-modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}
@@ -227,6 +226,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
 .upload-area.drag{border-color:var(--accent);background:rgba(232,33,60,.1)}
 .upload-area p{font-family:var(--fu);font-size:13px;color:var(--muted);margin:0}
 .upload-area input[type="file"]{display:none}
+.pdf-list{background:var(--bg3);padding:12px;border-radius:6px;margin-bottom:10px}
+.pdf-item{display:flex;justify-content:space-between;align-items:center;padding:8px;background:var(--bg2);border-radius:4px;margin-bottom:6px;font-family:var(--fu);font-size:12px}
+.pdf-item:last-child{margin-bottom:0}
 
 /* FADE-IN */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -236,7 +238,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
 /* RESPONSIVE */
 @media(max-width:900px){.foot-in{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.hero{padding:36px 16px 80px}.hero-h1{font-size:clamp(44px,12vw,80px)}.hero-stats{gap:20px}.hnav{display:none}.s-hero{grid-template-columns:140px 1fr}.s-info h1{font-size:24px}.srch{display:none}.foot-in{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
-@media(max-width:500px){.s-hero{grid-template-columns:1fr}.s-cover img{max-width:180px;margin:0 auto}.admin-box{padding:20px}.series-item{flex-direction:column;align-items:flex-start}}
+@media(max-width:500px){.s-hero{grid-template-columns:1fr}.s-cover img{max-width:180px;margin:0 auto}.admin-box{padding:20px}.series-item{flex-direction:column;align-items:flex-start}.pdf-controls{flex-direction:column}.pdf-nav{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -298,6 +300,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20p
 </div>
 
 <script>
+pdfjsWorker.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
 // ======================================================================
 //  CONFIG
 // ======================================================================
@@ -328,11 +332,11 @@ function defaultData(){
       {
         id:"solo-leveling",title:"Solo Leveling",type:"manhwa",
         cover:"https://picsum.photos/seed/slvlhindi/300/420",
-        desc:"Sung Jinwoo — duniya ka sabse kamzor hunter tha. Ek mysterious double dungeon mein near-death experience ke baad usne ek 'System' se connection banaya.",
+        desc:"Sung Jinwoo — duniya ka sabse kamzor hunter tha.",
         rating:9.8,tags:["Action","Fantasy","System","OP MC"],updatedAt:"2026-06-20",
         chapters:[
-          {num:1,title:"Sabse Kamzoor Hunter",pages:["https://picsum.photos/seed/sl1aa/800/1200","https://picsum.photos/seed/sl1bb/800/1200"]},
-          {num:2,title:"Double Dungeon Ka Raaz",pages:["https://picsum.photos/seed/sl2aa/800/1200","https://picsum.photos/seed/sl2bb/800/1200"]}
+          {num:1,title:"Sabse Kamzoor Hunter",pdf:null},
+          {num:2,title:"Double Dungeon Ka Raaz",pdf:null}
         ]
       }
     ]
@@ -348,7 +352,7 @@ function saveData(data){
 }
 
 // ======================================================================
-//  IMAGE TO BASE64 CONVERTER
+//  PDF TO BASE64 CONVERTER
 // ======================================================================
 function fileToBase64(file) {
   return new Promise((resolve, reject) => {
@@ -487,7 +491,7 @@ function renderAdminPanel(){
   
   $('admin-content').innerHTML = html;
   
-  // Upload area event listeners
+  // Cover upload
   const uploadArea = $('cover-upload');
   const fileInput = $('cover-file');
   
@@ -556,22 +560,19 @@ function editSeries(id){
   if(!series) return;
   
   let html = `
-    <h3 style="font-family:var(--fd);font-size:20px;margin-bottom:16px">📖 ${esc(series.title)} - Chapters Edit</h3>
+    <h3 style="font-family:var(--fd);font-size:20px;margin-bottom:16px">📖 ${esc(series.title)} - Chapters</h3>
     
     <div class="form-group">
-      <div class="form-label">Naya Chapter Add Karo</div>
+      <div class="form-label">🔴 Naya Chapter Add Karo (PDF)</div>
       <input type="number" id="edit-ch-num" placeholder="Chapter Number (e.g., 1, 2, 3)" class="form-input" style="margin-bottom:10px">
       <input type="text" id="edit-ch-title" placeholder="Chapter Title (optional)" class="form-input" style="margin-bottom:10px">
       
-      <div class="form-label">Images (PNG/JPG)</div>
-      <div class="upload-area" id="pages-upload" style="margin-bottom:10px">
-        <p>📸 Images drag karo ya click karo</p>
-        <input type="file" id="pages-file" accept="image/*" multiple>
+      <div class="form-label">PDF File Upload</div>
+      <div class="upload-area" id="pdf-upload" style="margin-bottom:10px">
+        <p>📄 PDF drag karo ya click karo</p>
+        <input type="file" id="pdf-file" accept=".pdf,application/pdf">
       </div>
       
-      <div class="form-label">Ya Image URLs (ek line par ek URL)</div>
-      <textarea id="edit-ch-pages" placeholder="https://example.com/page1.jpg
-https://example.com/page2.jpg" class="form-textarea" style="margin-bottom:10px"></textarea>
       <button class="form-btn" onclick="addChapter('${esc(id)}')">Chapter Add Karo ✓</button>
     </div>
     
@@ -580,7 +581,7 @@ https://example.com/page2.jpg" class="form-textarea" style="margin-bottom:10px">
       ${series.chapters.length ? series.chapters.map(ch => `
         <div style="background:var(--bg3);padding:10px;border-radius:6px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">
           <div style="font-family:var(--fu);font-size:13px">
-            <strong>Ch.${ch.num}</strong> — ${ch.title || 'No title'} (${ch.pages.length} pages)
+            <strong>Ch.${ch.num}</strong> — ${ch.title || 'No title'} ${ch.pdf ? '(✅ PDF)' : '(❌ No PDF)'}
           </div>
           <button class="btn-delete" onclick="deleteChapter('${esc(id)}', ${ch.num})">Delete</button>
         </div>
@@ -594,10 +595,10 @@ https://example.com/page2.jpg" class="form-textarea" style="margin-bottom:10px">
   
   $('admin-content').innerHTML = html;
   
-  // Pages upload
-  const uploadArea = $('pages-upload');
-  const fileInput = $('pages-file');
-  let uploadedPages = [];
+  // PDF upload
+  const uploadArea = $('pdf-upload');
+  const fileInput = $('pdf-file');
+  window.currentPdfData = null;
   
   uploadArea.addEventListener('click', () => fileInput.click());
   uploadArea.addEventListener('dragover', e => {
@@ -609,25 +610,19 @@ https://example.com/page2.jpg" class="form-textarea" style="margin-bottom:10px">
     e.preventDefault();
     uploadArea.classList.remove('drag');
     if(e.dataTransfer.files.length) {
-      uploadedPages = [];
-      for(let file of e.dataTransfer.files) {
-        const base64 = await fileToBase64(file);
-        uploadedPages.push(base64);
-      }
-      uploadArea.innerHTML = `<p>✅ ${uploadedPages.length} images upload ho gaye!</p>`;
-      $('edit-ch-pages').value = uploadedPages.join('\n');
+      const file = e.dataTransfer.files[0];
+      const base64 = await fileToBase64(file);
+      window.currentPdfData = base64;
+      uploadArea.innerHTML = '<p>✅ PDF upload ho gaya!</p>';
     }
   });
   
   fileInput.addEventListener('change', async e => {
     if(e.target.files.length) {
-      uploadedPages = [];
-      for(let file of e.target.files) {
-        const base64 = await fileToBase64(file);
-        uploadedPages.push(base64);
-      }
-      uploadArea.innerHTML = `<p>✅ ${uploadedPages.length} images upload ho gaye!</p>`;
-      $('edit-ch-pages').value = uploadedPages.join('\n');
+      const file = e.target.files[0];
+      const base64 = await fileToBase64(file);
+      window.currentPdfData = base64;
+      uploadArea.innerHTML = '<p>✅ PDF upload ho gaya!</p>';
     }
   });
 }
@@ -635,14 +630,12 @@ https://example.com/page2.jpg" class="form-textarea" style="margin-bottom:10px">
 function addChapter(seriesId){
   const num = parseInt($('edit-ch-num').value);
   const title = $('edit-ch-title').value.trim();
-  const pagesText = $('edit-ch-pages').value.trim();
+  const pdf = window.currentPdfData;
   
-  if(!num || !pagesText){
-    alert('❌ Chapter number aur images dono chahiye!');
+  if(!num || !pdf){
+    alert('❌ Chapter number aur PDF dono chahiye!');
     return;
   }
-  
-  const pages = pagesText.split('\n').map(u => u.trim()).filter(u => u);
   
   const data = getData();
   const series = data.series.find(s => s.id === seriesId);
@@ -653,7 +646,7 @@ function addChapter(seriesId){
     return;
   }
   
-  series.chapters.push({num, title: title || `Chapter ${num}`, pages});
+  series.chapters.push({num, title: title || `Chapter ${num}`, pdf});
   series.chapters.sort((a,b) => a.num - b.num);
   series.updatedAt = new Date().toISOString().split('T')[0];
   
@@ -683,6 +676,71 @@ function deleteSeries(id){
   saveData(data);
   renderAdminPanel();
   alert('✅ Series delete ho gaya!');
+}
+
+// ======================================================================
+//  PDF VIEWER
+// ======================================================================
+function renderPdfViewer(pdfData){
+  const pdfjsLib = window['pdfjs-dist/build/pdf'];
+  const container = $('app');
+  
+  container.innerHTML = `
+    <div class="pdf-viewer">
+      <div class="pdf-controls">
+        <button id="prev-btn" class="pdf-nav">← Pichla Page</button>
+        <span class="pdf-info"><span id="page-num">1</span> / <span id="page-count">0</span></span>
+        <button id="next-btn" class="pdf-nav">Agla Page →</button>
+      </div>
+      <div id="pdf-container"></div>
+    </div>
+  `;
+  
+  const loadingTask = pdfjsLib.getDocument(pdfData);
+  loadingTask.promise.then(pdf => {
+    const pdfContainer = $('pdf-container');
+    let currentPage = 1;
+    
+    $('page-count').textContent = pdf.numPages;
+    
+    function renderPage(pageNum) {
+      pdf.getPage(pageNum).then(page => {
+        const scale = 1.5;
+        const viewport = page.getViewport({ scale });
+        
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        canvas.className = 'pdf-page';
+        
+        pdfContainer.innerHTML = '';
+        pdfContainer.appendChild(canvas);
+        
+        page.render({
+          canvasContext: canvas.getContext('2d'),
+          viewport: viewport
+        });
+        
+        $('page-num').textContent = pageNum;
+      });
+    }
+    
+    renderPage(currentPage);
+    
+    $('prev-btn').addEventListener('click', () => {
+      if(currentPage > 1) {
+        currentPage--;
+        renderPage(currentPage);
+      }
+    });
+    
+    $('next-btn').addEventListener('click', () => {
+      if(currentPage < pdf.numPages) {
+        currentPage++;
+        renderPage(currentPage);
+      }
+    });
+  });
 }
 
 // ======================================================================
@@ -828,7 +886,7 @@ function series(id){
   ${s.chapters.length?s.chapters.map(c=>`
   <a class="ch-item fi" href="#read/${esc(s.id)}/${c.num}">
     <div class="ch-num">Ch.${c.num}</div>
-    <div><div class="ch-name">${c.title?esc(c.title):'Chapter '+c.num}</div><div class="ch-pgs">${c.pages.length} pages</div></div>
+    <div><div class="ch-name">${c.title?esc(c.title):'Chapter '+c.num}</div><div class="ch-pgs">${c.pdf ? '📄 PDF' : 'No PDF'}</div></div>
     <div class="ch-arr"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></div>
   </a>`).join(''):'<p class="nodata">Abhi koi chapter nahi.</p>'}
 </div>`;
@@ -845,59 +903,42 @@ function read(id,num){
   const idx=s.chapters.findIndex(c=>String(c.num)===String(num));
   const c=s.chapters[idx];
   if(!c)return series(id);
+  
+  if(!c.pdf){
+    alert('❌ Yeh chapter PDF ke saath available nahi hai!');
+    return series(id);
+  }
+  
   const prev=s.chapters[idx-1],next=s.chapters[idx+1];
   
   const needsGate = s.chapters.length > CHAPTER_GATE && idx === CHAPTER_GATE;
   
-  const nav=`<div class="rnav">
-    <a class="${prev?'':'dis'}" href="${prev?'#read/'+id+'/'+prev.num:'#'}">&#8592; Pichla</a>
+  const nav=`<div class="rnav" style="margin-bottom:20px">
+    <a class="${prev && prev.pdf?'':'dis'}" href="${prev && prev.pdf?'#read/'+id+'/'+prev.num:'#'}">&#8592; Pichla</a>
     <a href="#series/${esc(id)}" style="background:var(--bg4)">&#128216; Index</a>
-    <a class="${next?'':'dis'}" href="${next?'#read/'+id+'/'+next.num:'#'}">Agla &#8594;</a>
+    <a class="${next && next.pdf?'':'dis'}" href="${next && next.pdf?'#read/'+id+'/'+next.num:'#'}">Agla &#8594;</a>
   </div>`;
-  
-  let gateHTML = '';
-  if(needsGate){
-    gateHTML = `
-    <div class="shortner-required">
-      <p style="margin-bottom:12px">🔗 <strong>Aur chapters padne ke liye shortener solve karo!</strong></p>
-      <p style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:10px">Ye link share karo aur phir short link use kar:</p>
-      <button onclick="generateShortLink()" class="form-btn" style="background:var(--orange);width:auto;padding:8px 16px">Short Link Generate Karo</button>
-      <div id="short-link-result"></div>
-    </div>
-    `;
-  }
   
   $('app').innerHTML=`
 <div class="rpage">
   <div class="crumb fi"><a href="#">Home</a><span>/</span><a href="#series/${esc(id)}">${esc(s.title)}</a><span>/</span><span>Ch.${esc(String(num))}</span></div>
-  <div class="rhead fi fi1">
-    <div><div class="rtitle">${esc(s.title)}</div><div class="rch">Chapter ${esc(String(num))}${c.title?' — '+esc(c.title):''}</div></div>
-    ${nav}
+  ${nav}
+  <div id="pdf-viewer-container"></div>
+  <div style="text-align:center;margin-top:20px">
+    <a class="btn-back" href="#series/${esc(id)}">&#8592; Saare Chapters</a>
   </div>
-  ${gateHTML}
-  <div class="rimgs fi fi2">${c.pages.map((p,i)=>`<img src="${esc(p)}" alt="Page ${i+1}" loading="${i<2?'eager':'lazy'}">`).join('')}</div>
-  <div class="rnav-btm fi fi3">${nav}<a class="btn-back" href="#series/${esc(id)}">&#8592; Saare Chapters</a></div>
 </div>`;
+  
+  // Move PDF viewer to its container
+  setTimeout(() => {
+    const container = $('pdf-viewer-container');
+    renderPdfViewer(c.pdf);
+    const viewer = $('pdf-viewer');
+    if(viewer && container) container.appendChild(viewer);
+  }, 100);
+  
   window.scrollTo(0,0);
 }
-
-window.generateShortLink = async function(){
-  const result = $('short-link-result');
-  result.innerHTML = '<p style="color:var(--muted);margin-top:10px">Generate ho raha hai...</p>';
-  
-  const shortUrl = await shortenUrl(window.location.href);
-  if(shortUrl){
-    result.innerHTML = `
-      <div style="margin-top:10px;background:var(--bg3);padding:12px;border-radius:6px">
-        <p style="font-size:12px;color:var(--muted);margin-bottom:6px">Short Link:</p>
-        <input type="text" value="${shortUrl}" readonly style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--accent);padding:8px;border-radius:4px;font-family:var(--fu);font-size:12px;cursor:pointer" onclick="this.select()">
-        <p style="font-size:11px;color:var(--muted);margin-top:8px">👆 Copy karke share karo. Link solve karke aage bado!</p>
-      </div>
-    `;
-  } else {
-    result.innerHTML = '<p style="color:var(--accent);margin-top:10px">❌ Link generate nahi hua. Baad mein try karo.</p>';
-  }
-};
 
 // ======================================================================
 //  ROUTER
