@@ -122,11 +122,15 @@ let SERIES = [];
 let currentUser = null;
 
 async function loadSeries(){
+  route(); // turant screen dikhao, Loading pe na atke
   try{
     const snap = await getDocs(collection(db,"series"));
     SERIES = snap.docs.map(d => ({ id:d.id, ...d.data() }));
-  }catch(e){ console.error(e); }
-  route();
+    route();
+  }catch(e){
+    console.error(e);
+    alert("⚠️ Data load nahi hua: " + e.message + "\n\nFirestore Database banaya? (Phase 1 step 3)");
+  }
 }
 
 function showHome(){
@@ -309,4 +313,4 @@ onAuthStateChanged(auth, user => { currentUser = user; if(!user) closeModal(); }
 loadSeries();
 </script>
 </body>
-</html>
+                            </html>
