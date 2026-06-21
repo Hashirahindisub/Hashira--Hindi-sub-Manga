@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hashira Hindi Sub — Manga, Manhwa, Manhua Hindi Mein</title>
+<meta name="description" content="Hashira Hindi Sub — manga, manhwa, manhua bilkul free Hindi mein. Sabse pehle updates, premium quality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Hind:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#090910;--bg2:#11111c;--bg3:#18182a;--bg4:#222235;
+  --accent:#e8213c;--accent-glow:rgba(232,33,60,.35);
+  --orange:#ff7a1a;--gold:#ffbe33;--blue:#3d8bff;--green:#22cc88;
+  --text:#e8e8f8;--muted:#6868a0;--border:rgba(255,255,255,.07);
+  --manhwa:#e8213c;--manga:#3d8bff;--manhua:#22cc88;
+  --fd:'Bebas Neue',sans-serif;--fu:'Rajdhani',sans-serif;--fb:'Hind',sans-serif;
+  --r:10px;--shadow:0 8px 40px rgba(0,0,0,.65);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);min-height:100vh;overflow-x:hidden}
+a{color:inherit;text-decoration:none;cursor:pointer}
+img{display:block}
+button{border:none;cursor:pointer;font-family:inherit;background:none}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+[hidden]{display:none!important}
+
+/* TICKER */
+.ticker{background:var(--accent);height:30px;overflow:hidden;display:flex;align-items:center}
+.ticker-track{display:flex;gap:64px;white-space:nowrap;animation:tick 35s linear infinite}
+.ticker-item{font-family:var(--fu);font-size:12px;font-weight:700;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
+.ticker-dot{width:5px;height:5px;background:rgba(255,255,255,.5);border-radius:50%;flex-shrink:0}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:100;height:60px;background:rgba(9,9,16,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;gap:18px}
+.logo{font-family:var(--fd);font-size:24px;letter-spacing:3px;flex-shrink:0;line-height:1.1;display:flex;flex-direction:column}
+.logo-accent{color:var(--accent)}
+.logo-sub{font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:-2px}
+.hnav{display:flex;gap:2px;align-items:center;flex:1}
+.hnav a{font-family:var(--fu);font-size:14px;font-weight:600;padding:6px 12px;border-radius:6px;color:var(--muted);transition:all .2s;letter-spacing:.3px}
+.hnav a:hover,.hnav a.act{color:var(--text);background:var(--bg3)}
+.hnav a.act{color:var(--accent)}
+.srch{display:flex;align-items:center;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:0 12px;gap:8px;height:36px;min-width:190px;transition:border-color .2s}
+.srch:focus-within{border-color:rgba(232,33,60,.5)}
+.srch svg{color:var(--muted);flex-shrink:0;width:13px;height:13px}
+.srch input{background:none;border:none;outline:none;color:var(--text);font-family:var(--fu);font-size:14px;font-weight:500;width:100%}
+.srch input::placeholder{color:var(--muted)}
+
+/* HERO */
+.hero{position:relative;padding:64px 20px 100px;overflow:hidden;background:linear-gradient(180deg,rgba(232,33,60,.04) 0%,transparent 100%)}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 15% 55%,rgba(232,33,60,.13) 0%,transparent 55%),radial-gradient(ellipse at 85% 15%,rgba(61,139,255,.07) 0%,transparent 45%)}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px}
+.hero-diag{position:absolute;bottom:-1px;left:0;right:0;height:70px;background:var(--bg);clip-path:polygon(0 100%,100% 0,100% 100%);pointer-events:none}
+.hero-in{max-width:1100px;margin:0 auto;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,33,60,.12);border:1px solid rgba(232,33,60,.28);padding:5px 14px;border-radius:30px;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.badge-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.hero-h1{font-family:var(--fd);font-size:clamp(52px,9vw,108px);line-height:.9;letter-spacing:2px;margin-bottom:8px}
+.hero-h1 .ghost{-webkit-text-stroke:1px rgba(255,255,255,.18);color:transparent;display:block}
+.hero-h1 .grad{background:linear-gradient(130deg,var(--accent) 0%,var(--orange) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-family:var(--fu);font-size:17px;font-weight:500;color:var(--muted);margin-bottom:28px;line-height:1.5}
+.hero-sub strong{color:var(--text);font-weight:700}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.btn-p{background:linear-gradient(130deg,var(--accent),var(--orange));color:#fff;padding:11px 26px;border-radius:var(--r);font-family:var(--fu);font-size:15px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 22px rgba(232,33,60,.3)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,33,60,.45)}
+.btn-s{background:var(--bg3);color:var(--text);padding:11px 26px;border-radius:var(--r);font-family:var(--fu);font-size:15px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border:1px solid var(--border);transition:all .2s}
+.btn-s:hover{border-color:rgba(255,255,255,.18);background:var(--bg4)}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap}
+.stat-n{font-family:var(--fd);font-size:38px;line-height:1;margin-bottom:2px;background:linear-gradient(135deg,var(--text),rgba(255,255,255,.6));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-n em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+
+/* SECTIONS */
+.sec{max-width:1200px;margin:0 auto;padding:0 20px}
+.sec-hd{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px}
+.sec-title{font-family:var(--fd);font-size:26px;letter-spacing:2px;display:flex;align-items:center;gap:12px}
+.sec-title::before{content:'';width:4px;height:22px;background:linear-gradient(var(--accent),var(--orange));border-radius:2px;display:block;flex-shrink:0}
+.sec-link{font-family:var(--fu);font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;transition:color .2s}
+.sec-link:hover{color:var(--orange)}
+
+/* GENRE TABS */
+.genre-wrap{padding:20px 0 0}
+.genre-tabs{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.gtab{font-family:var(--fu);font-size:13px;font-weight:700;padding:7px 18px;border-radius:30px;background:var(--bg3);color:var(--muted);border:1px solid var(--border);cursor:pointer;transition:all .2s;letter-spacing:.3px}
+.gtab:hover{color:var(--text);border-color:rgba(255,255,255,.15)}
+.gtab.act{color:#fff;border-color:transparent}
+.gtab.act[data-f="all"]{background:var(--accent)}
+.gtab.act[data-f="manhwa"]{background:var(--manhwa)}
+.gtab.act[data-f="manga"]{background:var(--manga)}
+.gtab.act[data-f="manhua"]{background:var(--manhua)}
+
+/* TRENDING SCROLL */
+.trend-scroll{display:flex;gap:14px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin-bottom:44px}
+.trend-card{flex-shrink:0;width:190px;scroll-snap-align:start;border-radius:var(--r);overflow:hidden;position:relative;cursor:pointer;transition:transform .2s}
+.trend-card:hover{transform:scale(1.04)}
+.trend-card img{width:100%;height:270px;object-fit:cover}
+.trend-rank{position:absolute;top:4px;left:8px;font-family:var(--fd);font-size:54px;color:rgba(255,255,255,.07);line-height:1;pointer-events:none}
+.trend-ov{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.9) 60%);padding:28px 11px 11px}
+.trend-type{font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px}
+.trend-name{font-family:var(--fu);font-size:13px;font-weight:700;line-height:1.3}
+.trend-rat{font-family:var(--fu);font-size:12px;font-weight:600;color:var(--gold);margin-top:3px}
+
+/* SERIES GRID */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:15px;margin-bottom:46px}
+.scard{position:relative;background:var(--bg2);border-radius:var(--r);overflow:hidden;border:1px solid var(--border);cursor:pointer;transition:all .22s;display:block}
+.scard:hover{transform:translateY(-5px);border-color:rgba(232,33,60,.3);box-shadow:0 14px 44px rgba(0,0,0,.65),0 0 24px rgba(232,33,60,.12)}
+.scard-img-wrap{overflow:hidden}
+.scard img{width:100%;height:225px;object-fit:cover;transition:transform .3s}
+.scard:hover img{transform:scale(1.05)}
+.scard-body{padding:9px 10px 11px}
+.stype{display:inline-block;font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-bottom:5px}
+.stype.manhwa{background:rgba(232,33,60,.18);color:var(--manhwa)}
+.stype.manga{background:rgba(61,139,255,.18);color:var(--manga)}
+.stype.manhua{background:rgba(34,204,136,.18);color:var(--manhua)}
+.scard-title{font-family:var(--fu);font-size:13px;font-weight:700;line-height:1.35;color:var(--text);margin-bottom:6px}
+.scard-meta{display:flex;justify-content:space-between;align-items:center}
+.rat{font-family:var(--fu);font-size:12px;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:2px}
+.rat svg{width:10px;height:10px;fill:currentColor;flex-shrink:0}
+.chs{font-family:var(--fu);font-size:11px;color:var(--muted);font-weight:600}
+.new-b{position:absolute;top:8px;right:8px;background:var(--accent);color:#fff;font-family:var(--fu);font-size:9px;font-weight:700;letter-spacing:1px;padding:2px 7px;border-radius:4px;text-transform:uppercase}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:48px}
+.tag{font-family:var(--fu);font-size:13px;font-weight:600;padding:6px 15px;border-radius:30px;background:var(--bg3);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s}
+.tag:hover{color:var(--text);border-color:rgba(255,255,255,.18);background:var(--bg4)}
+
+/* RECENT */
+.reclist{display:flex;flex-direction:column;gap:9px;margin-bottom:48px}
+.recitem{display:flex;align-items:center;gap:13px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;cursor:pointer;transition:all .2s}
+.recitem:hover{border-color:rgba(232,33,60,.22);background:var(--bg3)}
+.rec-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.rec-cover{width:44px;height:62px;object-fit:cover;border-radius:7px;flex-shrink:0}
+.rec-info{flex:1;min-width:0}
+.rec-title{font-family:var(--fu);font-size:15px;font-weight:700;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rec-ch{font-family:var(--fu);font-size:12px;color:var(--muted);font-weight:500}
+.rec-ch b{color:var(--accent);font-weight:700}
+.rec-date{font-family:var(--fu);font-size:12px;color:var(--muted);font-weight:600;flex-shrink:0}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 20px 22px;margin-top:56px}
+.foot-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px}
+.foot-brand .logo{font-size:21px;margin-bottom:10px}
+.foot-brand p{font-family:var(--fb);font-size:13px;color:var(--muted);line-height:1.65;max-width:240px}
+.foot-col h4{font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+.foot-col a{display:block;font-family:var(--fu);font-size:14px;font-weight:500;color:var(--muted);margin-bottom:9px;transition:color .2s}
+.foot-col a:hover{color:var(--text)}
+.foot-bottom{max-width:1100px;margin:0 auto;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.foot-bottom p{font-family:var(--fu);font-size:12px;color:var(--muted);font-weight:500}
+.foot-bottom .acc{color:var(--accent)}
+
+/* SERIES PAGE */
+.spage{max-width:900px;margin:0 auto;padding:28px 20px}
+.crumb{font-family:var(--fu);font-size:13px;font-weight:600;color:var(--muted);margin-bottom:22px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.crumb a{color:var(--accent)}
+.crumb span{color:var(--muted)}
+.s-hero{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:30px}
+.s-cover img{width:100%;border-radius:var(--r);aspect-ratio:3/4;object-fit:cover;box-shadow:var(--shadow)}
+.s-badge{display:inline-block;font-family:var(--fu);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:6px;margin-bottom:10px}
+.s-info h1{font-family:var(--fd);font-size:34px;letter-spacing:1px;line-height:1.05;margin-bottom:8px}
+.s-rat{font-family:var(--fd);font-size:20px;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.s-rat small{font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:500;font-variant:normal}
+.s-desc{font-family:var(--fb);font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.s-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.stag{font-family:var(--fu);font-size:12px;font-weight:600;padding:4px 12px;border-radius:30px;background:var(--bg3);border:1px solid var(--border);color:var(--muted)}
+.s-meta{font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:600}
+.s-meta b{color:var(--text)}
+.ch-list-hd{font-family:var(--fd);font-size:22px;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.ch-item{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;margin-bottom:8px;cursor:pointer;transition:all .2s}
+.ch-item:hover{border-color:rgba(232,33,60,.28);background:var(--bg3)}
+.ch-num{font-family:var(--fd);font-size:22px;color:var(--muted);min-width:52px}
+.ch-name{font-family:var(--fu);font-size:15px;font-weight:700;margin-bottom:1px}
+.ch-pgs{font-family:var(--fu);font-size:11px;color:var(--muted);font-weight:500}
+.ch-arr{margin-left:auto;color:var(--muted)}
+.nodata{font-family:var(--fu);font-size:14px;color:var(--muted);padding:20px 0}
+
+/* READER */
+.rpage{max-width:780px;margin:0 auto;padding:20px}
+.rhead{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:13px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.rtitle{font-family:var(--fu);font-size:15px;font-weight:700}
+.rch{font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:500}
+.rnav{display:flex;gap:8px}
+.rnav a{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:7px 16px;border-radius:var(--r);font-family:var(--fu);font-size:13px;font-weight:700;transition:all .2s}
+.rnav a:hover{background:var(--accent);border-color:transparent;color:#fff}
+.rnav a.dis{color:var(--muted);pointer-events:none;opacity:.5}
+.rimgs img{width:100%;display:block;margin-bottom:3px;border-radius:5px}
+.rnav-btm{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--fu);font-size:14px;font-weight:700;color:var(--accent);border:1px solid rgba(232,33,60,.28);padding:9px 20px;border-radius:var(--r);transition:all .2s}
+.btn-back:hover{background:rgba(232,33,60,.1)}
+
+/* FADE-IN */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.fi{animation:fadeUp .38s ease both}
+.fi1{animation-delay:.04s}.fi2{animation-delay:.09s}.fi3{animation-delay:.14s}.fi4{animation-delay:.19s}.fi5{animation-delay:.24s}
+
+/* RESPONSIVE */
+@media(max-width:900px){.foot-in{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.hero{padding:36px 16px 80px}.hero-h1{font-size:clamp(44px,12vw,80px)}.hero-stats{gap:20px}.hnav{display:none}.s-hero{grid-template-columns:140px 1fr}.s-info h1{font-size:24px}}
+@media(max-width:500px){.s-hero{grid-template-columns:1fr}.s-cover img{max-width:180px;margin:0 auto}.srch{display:none}.foot-in{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr))}}
+</style>
+</head>
+<body>
+
+<div class="ticker"><div class="ticker-track" id="ttk"></div></div>
+
+<header>
+  <a class="logo" href="#" id="hlogo">HASHIRA<span class="logo-accent"> SUB</span><span class="logo-sub">Hindi Manga Reader</span></a>
+  <nav class="hnav">
+    <a href="#" class="act">Home</a>
+    <a href="#">Manhwa</a>
+    <a href="#">Manga</a>
+    <a href="#">Manhua</a>
+    <a href="#">Trending</a>
+  </nav>
+  <div class="srch">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" placeholder="Series dhundho...">
+  </div>
+</header>
+
+<div id="app"></div>
+
+<footer id="foot">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <div class="logo">HASHIRA<span class="logo-accent"> SUB</span></div>
+      <p>Manga, manhwa, aur manhua — ab bilkul free, bilkul Hindi mein. Tumhari bhasha, tumhari kahaniyan.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigate</h4>
+      <a href="#">Home</a><a href="#">Trending</a><a href="#">New Releases</a><a href="#">Completed</a>
+    </div>
+    <div class="foot-col">
+      <h4>Community</h4>
+      <a href="#">Discord Server</a><a href="#">Telegram Group</a><a href="#">Instagram</a><a href="#">Twitter / X</a>
+    </div>
+    <div class="foot-col">
+      <h4>Info</h4>
+      <a href="#">About Us</a><a href="#">Contact</a><a href="#">DMCA</a><a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>&copy; 2026 <span class="acc">Hashira Hindi Sub</span>. Sirf padhne ke liye — koi commercial use nahi.</p>
+    <p>Made with passion for Hindi readers</p>
+  </div>
+</footer>
+
+<script>
+// ======================================================================
+//  DATA — yahan apna content daalo
+// ======================================================================
+const DATA = {
+  announcements: [
+    "NAYA   Solo Leveling Ch.3 Upload Ho Gaya — Abhi Padho!",
+    "UPDATE   Omniscient Reader Ch.2 Hindi Mein Update!",
+    "COMING   Tower of God Season 2 Jald Aayega!",
+    "JOIN   Hamare Discord Server Par — Link Footer Mein!",
+    "NAYA   One Piece Ch.2 Upload — Zoro Arc Shuru!"
+  ],
+  series: [
+    {
+      id:"solo-leveling",title:"Solo Leveling",type:"manhwa",
+      cover:"https://picsum.photos/seed/slvlhindi/300/420",
+      desc:"Sung Jinwoo — duniya ka sabse kamzor hunter tha. Ek mysterious double dungeon mein near-death experience ke baad usne ek 'System' se connection banaya jo sirf ussi ko dikhta hai. Ab woh level up karta hai — unlimited. Sabse kamzor se sabse takatwar tak ka yeh safar ek legend banaega.",
+      rating:9.8,tags:["Action","Fantasy","System","OP MC"],updatedAt:"2026-06-20",
+      chapters:[
+        {num:1,title:"Sabse Kamzoor Hunter",pages:["https://picsum.photos/seed/sl1aa/800/1200","https://picsum.photos/seed/sl1bb/800/1200","https://picsum.photos/seed/sl1cc/800/1200"]},
+        {num:2,title:"Double Dungeon Ka Raaz",pages:["https://picsum.photos/seed/sl2aa/800/1200","https://picsum.photos/seed/sl2bb/800/1200"]},
+        {num:3,title:"System Activate Hua",pages:["https://picsum.photos/seed/sl3aa/800/1200","https://picsum.photos/seed/sl3bb/800/1200","https://picsum.photos/seed/sl3cc/800/1200"]}
+      ]
+    },
+    {
+      id:"omniscient-reader",title:"Omniscient Reader",type:"manhwa",
+      cover:"https://picsum.photos/seed/orvhnd77/300/420",
+      desc:"Dokja Kim ne 'Three Ways to Survive in a Ruined World' novel 10 saal padhi — aur woh akela tha jo usse end tak padha. Tab duniya exactly us novel jaisi ban gayi. Ab woh akela hai jo jaanta hai kya hoga aage — aur yeh jaankari hi uski sabse badi taakat hai.",
+      rating:9.6,tags:["Fantasy","Action","Mystery","Meta"],updatedAt:"2026-06-19",
+      chapters:[
+        {num:1,title:"Novel Ka Akhiri Chapter",pages:["https://picsum.photos/seed/orv1aa/800/1200","https://picsum.photos/seed/orv1bb/800/1200"]},
+        {num:2,title:"Apocalypse Scenario 1",pages:["https://picsum.photos/seed/orv2aa/800/1200","https://picsum.photos/seed/orv2bb/800/1200"]}
+      ]
+    },
+    {
+      id:"tower-of-god",title:"Tower of God",type:"manhwa",
+      cover:"https://picsum.photos/seed/toghindi3/300/420",
+      desc:"Bam ne Rachel ko dhundhne ke liye uss Tower mein ghus gaya — woh Tower jahan har wish puri hoti hai agar tum top pahuncho. Par Tower ke tests khatarnak hain, aur har insaan apna ek bada secret chhupaata hai.",
+      rating:9.3,tags:["Action","Adventure","Mystery","Politics"],updatedAt:"2026-06-18",
+      chapters:[
+        {num:1,title:"Tower Ka Pehla Darwaza",pages:["https://picsum.photos/seed/tog1aa/800/1200","https://picsum.photos/seed/tog1bb/800/1200"]},
+        {num:2,title:"Shinsu — Tower Ki Taakat",pages:["https://picsum.photos/seed/tog2aa/800/1200"]}
+      ]
+    },
+    {
+      id:"beginning-after-end",title:"The Beginning After the End",type:"manhwa",
+      cover:"https://picsum.photos/seed/tbatehnd9/300/420",
+      desc:"King Grey — ek aise duniya ka sabse powerful raja — ek nayi magical duniya mein reborn hua as Arthur Leywin. Is baar woh sab galtiyan nahi karega. Power nahi, connections nahi — sirf sachchi zindagi aur asli relationships.",
+      rating:9.1,tags:["Fantasy","Reincarnation","Magic","Action"],updatedAt:"2026-06-17",
+      chapters:[
+        {num:1,title:"Naya Janam, Naya Mauqa",pages:["https://picsum.photos/seed/tbate1aa/800/1200","https://picsum.photos/seed/tbate1bb/800/1200"]}
+      ]
+    },
+    {
+      id:"one-piece",title:"One Piece",type:"manga",
+      cover:"https://picsum.photos/seed/ophindi55/300/420",
+      desc:"Monkey D. Luffy ka ek hi sapna — Raja Pirate banna! Gol D. Roger ka legendary khazana 'One Piece' dhundhne ke liye woh apna dream crew banaata hai aur Grand Line ki khatarnak aur jaadui duniya mein kadam rakhta hai.",
+      rating:9.5,tags:["Action","Adventure","Comedy","Pirate"],updatedAt:"2026-06-16",
+      chapters:[
+        {num:1,title:"Shaitan Ka Fal — Gomu Gomu no Mi",pages:["https://picsum.photos/seed/op1aa/800/1200","https://picsum.photos/seed/op1bb/800/1200","https://picsum.photos/seed/op1cc/800/1200"]},
+        {num:2,title:"Pirate Hunter Roronoa Zoro",pages:["https://picsum.photos/seed/op2aa/800/1200","https://picsum.photos/seed/op2bb/800/1200"]}
+      ]
+    },
+    {
+      id:"martial-peak",title:"Martial Peak",type:"manhua",
+      cover:"https://picsum.photos/seed/mpkhindi2/300/420",
+      desc:"Yang Kai — martial arts sect ka ek saadharan sweeper disciple. Ek raat usne ek mysterious Wordless Black Book dhoondha jo ushe ek gupt taakat deta hai. Ab woh martial arts ki duniya mein survive karta hai — aur ooncha uthta jaata hai.",
+      rating:8.7,tags:["Action","Cultivation","Fantasy","Romance"],updatedAt:"2026-06-14",
+      chapters:[
+        {num:1,title:"Kaali Kitaab",pages:["https://picsum.photos/seed/mp1aa/800/1200","https://picsum.photos/seed/mp1bb/800/1200"]},
+        {num:2,title:"Gupt Cultivation Shuru",pages:["https://picsum.photos/seed/mp2aa/800/1200"]}
+      ]
+    }
+  ]
+};
+
+const ALL_TAGS = ["Action","Fantasy","Romance","School Life","System","OP MC","Adventure","Mystery","Comedy","Magic","Cultivation","Reincarnation","Supernatural","Horror","Sports","Slice of Life","Mecha","Sci-Fi","Historical","Martial Arts","Harem","Thriller"];
+
+// ======================================================================
+//  UTILS
+// ======================================================================
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function typeColor(t){
+  if(t==='manhwa')return'var(--manhwa)';
+  if(t==='manga')return'var(--manga)';
+  return'var(--manhua)';
+}
+
+function timeAgo(d){
+  const diff=Math.floor((new Date('2026-06-21')-new Date(d))/(864e5));
+  if(diff===0)return'Aaj';if(diff===1)return'Kal';
+  if(diff<7)return diff+' din pehle';
+  if(diff<30)return Math.floor(diff/7)+' hafte pehle';
+  return Math.floor(diff/30)+' mahine pehle';
+}
+
+function starSVG(){return`<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`}
+
+// ======================================================================
+//  TICKER
+// ======================================================================
+function initTicker(){
+  const items=[...DATA.announcements,...DATA.announcements];
+  $('ttk').innerHTML=items.map(a=>`<span class="ticker-item"><span class="ticker-dot"></span>${esc(a)}</span>`).join('');
+}
+
+// ======================================================================
+//  HOME
+// ======================================================================
+function home(){
+  const byDate=[...DATA.series].sort((a,b)=>new Date(b.updatedAt)-new Date(a.updatedAt));
+  const totalCh=DATA.series.reduce((n,s)=>n+s.chapters.length,0);
+
+  const hero=`
+<div class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="hero-in">
+    <div class="hero-badge fi"><span class="badge-dot"></span>Hindi Mein Free Manga Reader</div>
+    <h1 class="hero-h1 fi fi1">HASHIRA<br><span class="ghost">HINDI</span><span class="grad"> SUB</span></h1>
+    <p class="hero-sub fi fi2"><strong>Manga, Manhwa, Manhua</strong> — Ab Hindi Mein.<br>Free mein padho, koi registration nahi, koi payment nahi.</p>
+    <div class="hero-btns fi fi3">
+      <a class="btn-p" href="#series/solo-leveling">Abhi Padho</a>
+      <a class="btn-s" href="#">Explore Karo</a>
+    </div>
+    <div class="hero-stats fi fi4">
+      <div><div class="stat-n"><em>${DATA.series.length}+</em></div><div class="stat-l">Series</div></div>
+      <div><div class="stat-n"><em>${totalCh}+</em></div><div class="stat-l">Chapters</div></div>
+      <div><div class="stat-n"><em>12K+</em></div><div class="stat-l">Readers</div></div>
+      <div><div class="stat-n"><em>100%</em></div><div class="stat-l">Free</div></div>
+    </div>
+  </div>
+  <div class="hero-diag"></div>
+</div>`;
+
+  const genreTabs=`
+<div class="genre-wrap">
+  <div class="genre-tabs">
+    <button class="gtab act" data-f="all">Sab Kuch</button>
+    <button class="gtab" data-f="manhwa">Manhwa</button>
+    <button class="gtab" data-f="manga">Manga</button>
+    <button class="gtab" data-f="manhua">Manhua</button>
+  </div>
+</div>`;
+
+  const trending=`
+<div class="sec" style="margin-bottom:44px">
+  <div class="sec-hd"><div class="sec-title">Trending Ab</div><a class="sec-link" href="#">Sab Dekho</a></div>
+  <div class="trend-scroll">
+    ${DATA.series.map((s,i)=>`
+    <a class="trend-card" href="#series/${esc(s.id)}">
+      <div class="trend-rank">${String(i+1).padStart(2,'0')}</div>
+      <img src="${esc(s.cover)}" alt="${esc(s.title)}" loading="lazy">
+      <div class="trend-ov">
+        <div class="trend-type" style="color:${typeColor(s.type)}">${s.type.toUpperCase()}</div>
+        <div class="trend-name">${esc(s.title)}</div>
+        <div class="trend-rat">&#9733; ${s.rating}</div>
+      </div>
+    </a>`).join('')}
+  </div>
+</div>`;
+
+  const grid=`
+<div class="sec" id="sg-sec">
+  <div class="sec-hd">
+    <div class="sec-title">Saari Series</div>
+    <span style="font-family:var(--fu);font-size:13px;color:var(--muted);font-weight:600">${DATA.series.length} Series</span>
+  </div>
+  <div class="sgrid" id="sgrid">
+    ${DATA.series.map((s,i)=>{
+      const isNew=new Date('2026-06-21')-new Date(s.updatedAt)<4*864e5;
+      return`<a class="scard fi" style="animation-delay:${i*0.05}s" href="#series/${esc(s.id)}" data-type="${s.type}">
+        ${isNew?'<div class="new-b">NEW</div>':''}
+        <div class="scard-img-wrap"><img src="${esc(s.cover)}" alt="${esc(s.title)}" loading="lazy"></div>
+        <div class="scard-body">
+          <span class="stype ${s.type}">${s.type}</span>
+          <div class="scard-title">${esc(s.title)}</div>
+          <div class="scard-meta">
+            <div class="rat">${starSVG()} ${s.rating}</div>
+            <div class="chs">${s.chapters.length} Ch</div>
+          </div>
+        </div>
+      </a>`;
+    }).join('')}
+  </div>
+</div>`;
+
+  const tags=`
+<div class="sec" style="margin-bottom:0;padding-bottom:46px">
+  <div class="sec-hd"><div class="sec-title">Popular Tags</div></div>
+  <div class="tags">${ALL_TAGS.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+</div>`;
+
+  const recent=`
+<div class="sec">
+  <div class="sec-hd"><div class="sec-title">Haal Mein Update</div><a class="sec-link" href="#">Sab Dekho</a></div>
+  <div class="reclist">
+    ${byDate.map(s=>`
+    <a class="recitem" href="#series/${esc(s.id)}">
+      <div class="rec-dot" style="background:${typeColor(s.type)}"></div>
+      <img class="rec-cover" src="${esc(s.cover)}" alt="${esc(s.title)}" loading="lazy">
+      <div class="rec-info">
+        <div class="rec-title">${esc(s.title)}</div>
+        <div class="rec-ch">Latest: <b>Chapter ${s.chapters[s.chapters.length-1].num}</b> — ${esc(s.chapters[s.chapters.length-1].title)}</div>
+      </div>
+      <div class="rec-date">${timeAgo(s.updatedAt)}</div>
+    </a>`).join('')}
+  </div>
+</div>`;
+
+  $('app').innerHTML=hero+genreTabs+trending+grid+tags+recent;
+
+  // Genre filter logic
+  document.querySelectorAll('.gtab').forEach(btn=>{
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.gtab').forEach(b=>b.classList.remove('act'));
+      this.classList.add('act');
+      const f=this.dataset.f;
+      document.querySelectorAll('#sgrid .scard').forEach(c=>{
+        c[f==='all'||c.dataset.type===f?'removeAttribute':'setAttribute']('hidden','');
+      });
+    });
+  });
+
+  window.scrollTo(0,0);
+}
+
+// ======================================================================
+//  SERIES PAGE
+// ======================================================================
+function series(id){
+  const s=DATA.series.find(x=>x.id===id);
+  if(!s)return home();
+  const cs=`background:${typeColor(s.type)}22;color:${typeColor(s.type)}`;
+  $('app').innerHTML=`
+<div class="spage">
+  <div class="crumb fi"><a href="#">Home</a><span>/</span><span>${esc(s.title)}</span></div>
+  <div class="s-hero fi fi1">
+    <div class="s-cover"><img src="${esc(s.cover)}" alt="${esc(s.title)}"></div>
+    <div class="s-info">
+      <div class="s-badge" style="${cs}">${s.type.toUpperCase()}</div>
+      <h1>${esc(s.title)}</h1>
+      <div class="s-rat">&#9733; ${s.rating} <small>/ 10</small></div>
+      <p class="s-desc">${esc(s.desc)}</p>
+      <div class="s-tags">${s.tags.map(t=>`<span class="stag">${esc(t)}</span>`).join('')}</div>
+      <div class="s-meta">Update: <b>${timeAgo(s.updatedAt)}</b> &nbsp;|&nbsp; <b>${s.chapters.length}</b> Chapters</div>
+    </div>
+  </div>
+  <div class="ch-list-hd fi fi2">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    Chapters
+  </div>
+  ${s.chapters.length?s.chapters.map(c=>`
+  <a class="ch-item fi" href="#read/${esc(s.id)}/${c.num}">
+    <div class="ch-num">Ch.${c.num}</div>
+    <div><div class="ch-name">${c.title?esc(c.title):'Chapter '+c.num}</div><div class="ch-pgs">${c.pages.length} pages</div></div>
+    <div class="ch-arr"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></div>
+  </a>`).join(''):'<p class="nodata">Abhi koi chapter nahi.</p>'}
+</div>`;
+  window.scrollTo(0,0);
+}
+
+// ======================================================================
+//  READER PAGE
+// ======================================================================
+function read(id,num){
+  const s=DATA.series.find(x=>x.id===id);
+  if(!s)return home();
+  const idx=s.chapters.findIndex(c=>String(c.num)===String(num));
+  const c=s.chapters[idx];
+  if(!c)return series(id);
+  const prev=s.chapters[idx-1],next=s.chapters[idx+1];
+  const nav=`<div class="rnav">
+    <a class="${prev?'':'dis'}" href="${prev?'#read/'+id+'/'+prev.num:'#'}">&#8592; Pichla</a>
+    <a href="#series/${esc(id)}" style="background:var(--bg4)">&#128216; Index</a>
+    <a class="${next?'':'dis'}" href="${next?'#read/'+id+'/'+next.num:'#'}">Agla &#8594;</a>
+  </div>`;
+  $('app').innerHTML=`
+<div class="rpage">
+  <div class="crumb fi"><a href="#">Home</a><span>/</span><a href="#series/${esc(id)}">${esc(s.title)}</a><span>/</span><span>Ch.${esc(String(num))}</span></div>
+  <div class="rhead fi fi1">
+    <div><div class="rtitle">${esc(s.title)}</div><div class="rch">Chapter ${esc(String(num))}${c.title?' — '+esc(c.title):''}</div></div>
+    ${nav}
+  </div>
+  <div class="rimgs fi fi2">${c.pages.map((p,i)=>`<img src="${esc(p)}" alt="Page ${i+1}" loading="${i<2?'eager':'lazy'}">`).join('')}</div>
+  <div class="rnav-btm fi fi3">${nav}<a class="btn-back" href="#series/${esc(id)}">&#8592; Saare Chapters</a></div>
+</div>`;
+  window.scrollTo(0,0);
+}
+
+// ======================================================================
+//  ROUTER
+// ======================================================================
+function route(){
+  const p=location.hash.slice(1).split('/');
+  if(p[0]==='series'&&p[1])return series(p[1]);
+  if(p[0]==='read'&&p[1]&&p[2])return read(p[1],p[2]);
+  home();
+}
+
+initTicker();
+window.addEventListener('hashchange',route);
+route();
+</script>
+</body>
+</html>
